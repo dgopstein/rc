@@ -1,0 +1,174 @@
+# Autostart tmux on ssh
+if [ "$PS1" != "" -a "${STARTED_TMUX:-x}" = x -a "${SSH_TTY:-x}" != x ]
+then
+  STARTED_TMUX=1; export STARTED_TMUX
+  sleep 1
+  ( (tmux has-session -t remote && tmux attach-session -t remote) || (tmux new-session -s remote) ) && exit 0
+  echo "tmux failed to start"
+fi
+
+
+alias rc='$EDITOR $HOME/.common/commonrc.sh'
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=10000
+HISTFILESIZE=100000
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+export PROMPT_COMMAND='history -a'
+
+# wrap lines correctly after resizing terminal
+shopt -s checkwinsize
+
+export EDITOR=vim
+export GREP_OPTIONS="--color --exclude='svn'"
+
+alias ll='ls -l'
+
+alias riv='psql -h rivendell -U tripmaster'
+alias rov='psql -h rivendell -U tripmaster_ro -d tripmaster'
+alias div='psql -h rivendell-dev -U tripmaster'
+alias dev='psql -h dev-db -U tripmaster'
+
+#alias up='svntr up $TRTOP | tee /tmp/up.log && mk'
+
+alias mk='make -C $TRTOP'
+
+alias findbugs='ant -f tests/findbugs/build.xml -lib tests/findbugs/findbugs-2.0.1/lib/findbugs-ant.jar findbugs2'
+
+TRHOME=${TRHOME:-'/home/site'}
+
+function t {
+  DIR=$TRHOME
+  GLOB=${1:-'?'}
+  BRANCH=$( basename `ls -d $DIR/trsrc-*$GLOB* | awk '{print $1}'` )
+
+  echo BRANCH: $BRANCH
+
+  if [ -z $BASEPATH ]; then
+    export BASEPATH=$PATH
+  fi
+
+  export TRTOP=$DIR/$BRANCH
+  export PT=$TRTOP/rails/provider_tool
+  export PATH=$BASEPATH:$TRTOP/scripts
+  cd $TRTOP
+}
+
+function p {
+  #BRANCH=
+  #DIR=${1:-`basename $TRTOP`}
+
+  t $1 #$DIR
+  cd rails/provider_tool
+}
+
+function ph {
+   egrep -ih ${1:-.*} ~/.psql_history | sed -e's/\\040/ /g' | sed 's/\\012/\
+   /g'
+}
+alias phist=ph
+
+alias pt='jruby --debug -J-Xmx8g -J-Xdebug -J-Xrunjdwp:transport=dt_socket,address=1044,server=y,suspend=n script/server'
+alias tool=pt
+
+function pconf {
+  cd /usr/local/tripadvisor/providers/conf/$1
+}
+
+function plog {
+  cd $LOGS/$1/FeedImport && cd `ls -t | head -1`
+}
+
+function junit {
+    JVMFLAGS=
+    if [ "$1" = "-d" ]
+    then
+	JVMFLAGS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y"
+	shift
+    fi
+    export ENSURE_PURE_UNIT_TESTS=true
+    javatr.sh --java-flags "$JVMFLAGS" org.junit.runner.JUnitCore $*
+}
+
+_plogs()
+{
+    local curw
+    COMPREPLY=()
+    pushd /usr/local/tripadvisor/providers/logs > /dev/null
+    list=
+    curw=${COMP_WORDS[COMP_CWORD]}
+    for dir in `ls -d $curw*`; do
+        if [[ -e $dir/FeedImport ]]; then
+            list="$list `ls -dr $dir/FeedImport/* | head -n 1`"
+        fi
+    done
+    popd > /dev/null
+
+    COMPREPLY=($(compgen -W "$list" -- "$curw"))
+
+    return 0
+}
+complete -F _plogs -o nospace plogs
+alias plogs='. plogs.sh'
+
+function logs {
+  rm /usr/local/tripadvisor/providers/logs
+  ln -sf /usr/local/tripadvisor/providers/$1-logs /usr/local/tripadvisor/providers/logs
+}
+alias log=logs
+export LOGS=/usr/local/tripadvisor/providers/logs/
+export CONF=/usr/local/tripadvisor/providers/conf/
+
+BLACK='\[\e[00m\]'
+BLUE='\[\e[34m\]'
+GREEN='\[\e[32m\]'
+BGREEN='\[\e[32;1m\]'
+RED='\[\e[31m\]'
+YELLOW='\[\e[33m\]'
+DEFAULT='\[\e[0m\]'
+
+if [ `whoami` = 'root' ]; then
+    user=$RED 
+else
+    user=$BLACK
+fi
+
+case `hostname` in
+  'dgopstein-dev'* | 'narf'* )
+     host=$BLACK
+   ;;
+  'commerce'*|'commerce2'*|'commerce-importer'*|'commerce-importer2'*|'commerce-cron'*|'dashboard'*|'druby1'*)
+     host=$GREEN
+   ;;
+  *)
+    host=$BLUE
+   ;;
+esac
+
+PS1="${user}\u${BLACK}@${host}\h${BLACK}:${path}\W${DEFAULT}\$ "
+
+#alias grep='grep --exclude-dir=".svn" --exclude="*~"'
+
+stty ixany
+stty ixoff -ixon
+
+function dingo {
+  db='mysql -h crawfish -u reader --password=reader lemming'
+
+  echo $db
+
+  read -r -d '' query <<EOS
+  set @search:='%$1%';
+  SELECT p.id, group_concat(concat(c.username,':',r.name) separator ', ') AS user, p.created, p.name
+  FROM project_assignments pa JOIN projects p ON pa.project_id=p.id JOIN contacts c ON pa.contact_id=c.id JOIN roles r ON pa.role_id=r.id
+  WHERE p.active=1 AND (c.username LIKE @search OR p.name LIKE @search) GROUP BY p.id;
+EOS
+
+ echo $query | $db 
+}

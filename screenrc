@@ -1,0 +1,28 @@
+# Configuration for GNU Screen
+#
+# Aaron Crane
+# http://aaroncrane.co.uk/2008/01/unbreaking_screen/
+#
+# To use this file, copy it to ~/.screenrc
+
+# Set the escape character to ^^ (which is almost never used).  You can
+# probably type ^^ as either Control+6 or Control+Shift+6.
+escape ^Tt
+
+# Don't switch to the xterm alternate screen, so that scrollback works
+termcapinfo xterm*|rxvt*|kterm*|Eterm* ti@:te@
+
+# But do manage an alternate screen in the virtual terminal, so that vim
+# doesn't scribble on my carefully-maintained state
+altscreen on
+
+# Launch login shells by default
+shell -$SHELL
+
+# Don't bother with the annoying message on startup
+startup_message off
+
+defscrollback 10000
+
+# Bottom bar
+hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%d.%m.%Y %{w}| %{g}%l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"

@@ -1,22 +1,25 @@
+import XMonad hiding (Tall)
 import XMonad.Layout.IM
 import XMonad.Layout.Reflect
-import Data.Ratio ((%))
 import XMonad.Layout.PerWorkspace
-import XMonad hiding (Tall)
+import XMonad.Layout.LayoutHints
+import XMonad.Layout.ResizableTile
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.UrgencyHook
-import XMonad.Layout.LayoutHints
-import XMonad.Layout.ResizableTile
+import XMonad.Hooks.FadeInactive
 import XMonad.Prompt
-import XMonad.Config.Gnome
 import XMonad.Prompt.Shell
+import XMonad.Config.Gnome
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Actions.CycleWS
- 
+
 import System.Exit
 import System.IO
+
 import Data.Monoid
+import Data.Ratio ((%))
+import Data.List (isInfixOf)
  
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -25,17 +28,18 @@ web     = "1:Web"
 eclipse = "2:Eclipse"
 email   = "3:Email"
 extra   = "4:Extra"
+docs    = "5:Docs"
  
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ withUrgencyHook NoUrgencyHook
            $ gnomeConfig {
                 terminal           = "urxvt",
-                workspaces         = [web, eclipse, email, extra, "5", "6", "7", "8", "9"],
+                workspaces         = [web, eclipse, email, extra, docs, "6", "7", "8", "9"],
                 normalBorderColor  = "#333333",
-                focusedBorderColor = "#3399cc",
-                borderWidth        = 2,
-                --manageHook         = myManageHook,
+                focusedBorderColor = "#EEAA44",
+                borderWidth        = 4,
+                manageHook         = myManageHook,
                 --modMask            = mod4Mask,
                 keys               = myKeys,
                 mouseBindings      = myMouseBindings,
@@ -116,9 +120,12 @@ myLayout = avoidStruts $
      delta   = 1/100
      ratio   = 1/2
      pRatio   = 4/5
- 
---myManageHook :: ManageHook
---myManageHook = composeAll
-  --  [ className =? "Pidgin"    --> doShift email
+
+myManageHook :: ManageHook
+myManageHook = composeAll [
+  --  className =? "Pidgin"    --> doShift email
+      fmap(isInfixOf "libreoffice-writer") className --> doShift docs
   --, className =? "Firefox" --> doShift "6:Web"
-  --, className =? "Eclipse" --> doShift eclipse]
+  --, className =? "Eclipse" --> doShift eclipse
+  ]
+ 

@@ -34,6 +34,7 @@ alias riv='psql -h rivendell -U tripmaster'
 alias rov='psql -h rivendell -U tripmaster_ro -d tripmaster'
 alias div='psql -h rivendell-dev -U tripmaster'
 alias dev='psql -h dev-db -U tripmaster'
+alias whs='sqsh -U CommerceWHReports -S warehousesql -P whReports -D Commerce -m pretty'
 
 #alias up='svntr up $TRTOP | tee /tmp/up.log && mk'
 

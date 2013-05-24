@@ -1,7 +1,15 @@
 init_env() {
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-  TRHOME=${TRHOME:-'/home/site'}
-  NO_TR=1
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  export TRHOME=${TRHOME:-'/home/site'}
+  export TRDATA_DIR="$TRHOME/tr-data"
+  export NO_TR=1
+  export JRUBY_HOME=$MY_RUBY_HOME
+  export JRUBY_OPTS=--1.8
+  export EDITOR=vim
+  export JAVA_HOME=/usr/jdk1.7
+
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  rvm use jruby-1.7.2@commerce
 }
 
 init_history() {
@@ -15,22 +23,60 @@ init_history() {
 
 init_aliases() {
   alias ll='ls -l'
+  alias ack='ack-grep'
 
   # Databases
   alias riv='psql -h rivendell -U tripmaster'
   alias rov='psql -h rivendell -U tripmaster_ro -d tripmaster'
   alias div='psql -h rivendell-dev -U tripmaster'
   alias dev='psql -h dev-db -U tripmaster'
+  alias cdb='psql -h commerce-db.tripadvisor.com -U provider_tool_test'
+  alias whs='sqsh -U CommerceWHReports -S statistics -P whReports -D Commerce -m pretty'
+
+  alias stat='svntr stat | grep -v "^?"'
+
+}
+
+init_keybindings() {
+  # Make C-w go until back to the last space
+  tcsh-backward-kill-word () {
+    local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
+    zle backward-kill-word
+  }
+  zle -N tcsh-backward-kill-word
+  bindkey '^W' tcsh-backward-kill-word
+}
+
+init_themes() {
+  ZSH=$HOME/.oh-my-zsh
+  plugins=(git)
+  source $ZSH/oh-my-zsh.sh
+  export PATH=/home/dgopstein/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
 }
 
 init_prompt() {
   PROMPT="[%D{%H:%M:%S}] %n@%m:%~%# "
-  RPROMPT=""
+  RPROMPT="%(?,%F{green}:%),%F{yellow}%? %F{red}:()%f \$CMD_TIME_STR"
+}
+
+preexec() {
+  export CMD_START_TIME=`date +'%s'`
+}
+
+precmd() {
+  declare CMD_END_TIME=`date +'%s'`
+  declare CMD_TIME_SEC=$(( $CMD_END_TIME - ${CMD_START_TIME:-CMD_END_TIME} ))
+  declare -Z2 CMD_TIME_SECONDS_PART=$(($CMD_TIME_SEC%60))
+  declare -Z2 CMD_TIME_MINUTES_PART=$(($CMD_TIME_SEC/60))
+  export CMD_TIME_STR="$CMD_TIME_MINUTES_PART:$CMD_TIME_SECONDS_PART" 
+  CMD_START_TIME=`date +'%s'`
 }
 
 init_env
 init_history
 init_aliases
+init_keybindings
+init_themes
 init_prompt
 
 # Userland commands
@@ -83,3 +129,5 @@ EOS
 
  echo $query | $db 
 }
+
+

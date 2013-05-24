@@ -10,9 +10,10 @@ import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.FadeInactive
 import XMonad.Prompt
 import XMonad.Prompt.Shell
-import XMonad.Config.Gnome
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Actions.CycleWS
+
+import XMonad.Config.Gnome
 
 import System.Exit
 import System.IO
@@ -124,7 +125,7 @@ myLayout = avoidStruts $
 myManageHook :: ManageHook
 myManageHook = composeAll [
   --  className =? "Pidgin"    --> doShift email
-      fmap(isInfixOf "libreoffice-writer") className --> doShift docs
+      fmap (isInfixOf "libreoffice-calc") className --> doShift docs
   --, className =? "Firefox" --> doShift "6:Web"
   --, className =? "Eclipse" --> doShift eclipse
   ]

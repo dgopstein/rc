@@ -10,6 +10,7 @@ init_env() {
 
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
   rvm use jruby-1.7.2@commerce
+  echo "Hi Dan, your code sucks. -Graham"
 }
 
 init_history() {
@@ -32,6 +33,7 @@ init_aliases() {
   alias dev='psql -h dev-db -U tripmaster'
   alias cdb='psql -h commerce-db.tripadvisor.com -U provider_tool_test'
   alias whs='sqsh -U CommerceWHReports -S statistics -P whReports -D Commerce -m pretty'
+  alias mon='psql -h tripmonster -U tripmonster'
 
   alias stat='svntr stat | grep -v "^?"'
 
@@ -75,9 +77,9 @@ precmd() {
 init_env
 init_history
 init_aliases
-init_keybindings
 init_themes
 init_prompt
+init_keybindings
 
 # Userland commands
 function t {
@@ -95,8 +97,10 @@ function t {
     export BASEPATH=$PATH
   fi
 
-  export TRTOP=$DIR/$BRANCH
+  export TRTOP=/$DIR/$BRANCH # Prefix with a second / so that zsh won't autocomplete with TRTOP
+  export let $BRANCH[7,-1]=$TRTOP[2,-1] # Generate a variabled named the title of the branch so zsh will autocomplete it
   export PT=$TRTOP/rails/provider_tool
+  export let $BRANCH[7,-1]_PT=$PT[2,-1] # Generate a variabled named the title of the branch so zsh will autocomplete it
   export PATH=$BASEPATH:$TRTOP/scripts
   cd $TRTOP
 }

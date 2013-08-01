@@ -32,10 +32,12 @@ init_aliases() {
   alias div='psql -h rivendell-dev -U tripmaster'
   alias dev='psql -h dev-db -U tripmaster'
   alias cdb='psql -h commerce-db.tripadvisor.com -U provider_tool_test'
+  alias loc='psql provider_tool_test'
   alias whs='sqsh -U CommerceWHReports -S statistics -P whReports -D Commerce -m pretty'
   alias mon='psql -h tripmonster -U tripmonster'
 
   alias stat='svntr stat | grep -v "^?"'
+  alias pt='commerce-jruby -C $TRTOP/rails/provider_tool --debug -J-Xmx8g -J-Xdebug -J-Xrunjdwp:transport=dt_socket,address=1044,server=y,suspend=n script/server'
 
 }
 
@@ -57,7 +59,7 @@ init_themes() {
 }
 
 init_prompt() {
-  PROMPT="[%D{%H:%M:%S}] %n@%m:%~%# "
+  PROMPT="%{`echo "\a"`%}[%D{%H:%M:%S}] %n@%m:%~%# "
   RPROMPT="%(?,%F{green}:%),%F{yellow}%? %F{red}:()%f \$CMD_TIME_STR"
 }
 
@@ -131,7 +133,7 @@ function dingo {
   WHERE p.active=1 AND (c.username LIKE @search OR p.name LIKE @search) GROUP BY p.id;
 EOS
 
- echo $query | $db 
+ echo $query | eval ${db}
 }
 
 

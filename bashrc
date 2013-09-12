@@ -115,5 +115,5 @@ export NO_TR='t'
 source $HOME/.common/commonrc
 
 TERM=xterm
-
-export JRUBY_OPTS=--1.8
+export PATH=$PATH:/usr/share/play-2.1.3
+alias ack='ack-grep'

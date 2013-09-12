@@ -1,14 +1,54 @@
 URxvt*saveLines: 12000
-URxvt*foreground: White
-URxvt*background: Black
-#URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12:antialias=true:hinting=true
-#URxvt*boldFont: xft:Bitstream Vera Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
-URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
-#URxvt*font: xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
-#URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=13:antialias=true:hinting=true
-#URxvt*font: xft:terminus:pixelsize=15
-#URxvt*boldFont: xft:terminus:bold:pixelsize=15
-#URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
-#URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
-URxvt*scrollBar: false
+
+! Make fonts look nice
+Xft.antialias:true
+Xft.hinting:true
+! hintslight | hintsmedium | hintsfull
+Xft.hintstyle:hintsfull
+! rgba subpixel hinting (for LCDs)
+Xft.rgba:subpixel
+xft.dpi: 96
+#URxvt*letterSpace: -1
+
+! Screw scrolling, I have tmux
+urxvt*internalBorder: 0
+urxvt*scrollstyle: rxvt
+urxvt*scrollBar: false
+urxvt*depth: 32
+urxvt*secondaryScroll: false
+
+urxvt.urgentOnBell: true
+
+!COLORS
+*foreground:#a0a0a0
+*background:#1B1D1E
+! black
+*color0:    #1B1D1E
+*color8:    #505354
+! red
+*color1:    #F92672
+*color9:    #FF669D
+! green
+*color2:    #76B22E
+*color10:   #9ECD3F
+! yellow
+*color3:    #FD971F
+*color11:   #E6DB74
+! blue
+*color4:    #C629FF
+*color12:   #038ACF
+! magenta
+*color5:    #9E6FFE
+*color13:   #9E6FFE
+! cyan
+*color6:    #5E7175
+*color14:   #66D9EF
+! white
+*color7:    #CCCCC6
+*color15:   #F8F8F2
+
+URxvt*font:                 xft:Ubuntu Mono for Powerline:regular:size=8
+URxvt*imFont:               xft:Ubuntu Mono for Powerline:regular:size=8
+URxvt*boldFont:             xft:Ubuntu Mono for Powerline:bold:size=8
+URxvt*italicFont:           xft:Ubuntu Mono for Powerline:italic:size=8
+URxvt*boldItalicFont:       xft:Ubuntu Mono for Powerline:bold:italic:size=8

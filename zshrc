@@ -1,5 +1,5 @@
 init_env() {
-  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  #export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
   export TRHOME=${TRHOME:-'/home/site'}
   export TRDATA_DIR="$TRHOME/tr-data"
   export NO_TR=1
@@ -8,8 +8,8 @@ init_env() {
   export EDITOR=vim
   export JAVA_HOME=/usr/jdk1.7
 
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-  rvm use jruby-1.7.2@commerce
+  #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  #rvm use jruby-1.7.2@commerce
   echo "Hi Dan, your code sucks. -Graham"
 }
 
@@ -60,7 +60,6 @@ init_themes() {
 
 init_prompt() {
   PROMPT="%{`echo "\a"`%}[%D{%H:%M:%S}] %n@%m:%~%# "
-  RPROMPT="%(?,%F{green}:%),%F{yellow}%? %F{red}:()%f \$CMD_TIME_STR"
 }
 
 preexec() {
@@ -74,6 +73,13 @@ precmd() {
   declare -Z2 CMD_TIME_MINUTES_PART=$(($CMD_TIME_SEC/60))
   export CMD_TIME_STR="$CMD_TIME_MINUTES_PART:$CMD_TIME_SECONDS_PART" 
   CMD_START_TIME=`date +'%s'`
+
+  echo "time_sec '$CMD_TIME_SEC'"
+  if [ $CMD_TIME_SEC -gt 3 ]; then
+    RPROMPT="%(?,%F{green}:%),%F{yellow}%? %F{red}:()%f \$CMD_TIME_STR"
+  else
+    unset RPROMT
+  fi
 }
 
 init_env

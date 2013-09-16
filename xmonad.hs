@@ -1,17 +1,18 @@
 import XMonad hiding (Tall)
+import XMonad.Actions.CycleWS
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.SetWMName
+import XMonad.Hooks.UrgencyHook
 import XMonad.Layout.IM
 import XMonad.Layout.Reflect
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.ResizableTile
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.UrgencyHook
-import XMonad.Hooks.FadeInactive
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Util.Run(spawnPipe)
-import XMonad.Actions.CycleWS
 
 import XMonad.Config.Gnome
 
@@ -44,6 +45,7 @@ main = do
                 --modMask            = mod4Mask,
                 keys               = myKeys,
                 mouseBindings      = myMouseBindings,
+                startupHook        = setWMName "LG3D",
                 layoutHook         = myLayout,
                 logHook            = dynamicLogWithPP $ xmobarPP {   -- maybe cuasing lockups?
                                          ppOutput = hPutStrLn xmproc,

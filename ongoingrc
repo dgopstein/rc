@@ -1,1 +1,21 @@
-export PATH=PATH:/usr/share/play-2.1.3:/usr/share/idea-IU-129.713/bin
+export PATH=PATH:/usr/share/play:/usr/share/idea-IU-129.713/bin
+
+git-review() {
+  if [[ -z $1 ]]; then
+    branch=`git rev-parse --abbrev-ref HEAD`
+    echo "No argument given, assuming: $branch"
+  else
+    branch=$1
+  fi
+  git push origin -u "$branch":review/dan/"$branch"
+}
+
+git-delete() {
+  if [[ -n $1 ]]; then
+    branch=$1
+    git push origin :review/dan/$1
+    git branch -d $1
+  else
+    echo "No branch specified"
+  fi
+}

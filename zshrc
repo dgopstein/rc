@@ -1,7 +1,7 @@
 init_env() {
   export EDITOR=vim
+  export ZSH_THEME_GIT_PROMPT_NOCACHE=t
 
-  unsetopt correct
 
   source ~/.ongoingrc
 
@@ -51,13 +51,15 @@ init_themes() {
   plugins=(git)
   source $ZSH/oh-my-zsh.sh
   source ~/.zsh/git-prompt/zsh-git-prompt.sh # https://github.com/olivierverdier/zsh-git-prompt
+  unsetopt correctall
+
   export PATH=/home/dan/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
 }
 
 init_prompt() {
   #PROMPT="%{`echo "\a"`%}[%D{%H:%M:%S}] %n@%m:%~%# "
   PROMPT="%{`echo "\a"`%}" # bell at prompt to light up xmobar on command completion
-  PROMPT+='%B%~%b$(git_super_status) %# ' # git status
+  PROMPT+='$(git_super_status)%B%~%b %# ' # git status
 }
 
 preexec() {
@@ -73,16 +75,15 @@ precmd() {
   CMD_START_TIME=`date +'%s'`
 
   if [ $CMD_TIME_SEC -gt 3 ]; then
-    echo 'setting prompt'
     RPROMPT="%(?,%F{green}:%),%F{yellow}%? %F{red}:()%f \$CMD_TIME_STR"
   else
     unset RPROMPT
   fi
 }
 
-init_env
 init_history
 init_aliases
+init_env
 init_themes
 init_prompt
 init_keybindings

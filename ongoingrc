@@ -1,4 +1,7 @@
-export PATH=PATH:/usr/share/play:/usr/share/idea-IU-129.713/bin
+export PATH=$PATH:$HOME/opt/play-2.2.0
+export PATH=$PATH:/usr/share/idea-IU-129.713/bin
+
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
 git-review() {
   if [[ -z $1 ]]; then
@@ -7,13 +10,13 @@ git-review() {
   else
     branch=$1
   fi
-  git push origin -u "$branch":review/dan/"$branch"
+  git push origin -u "$branch":dan/"$branch"
 }
 
 git-delete() {
   if [[ -n $1 ]]; then
     branch=$1
-    git push origin :review/dan/$1
+    git push origin :dan/$1
     git branch -d $1
   else
     echo "No branch specified"

@@ -19,7 +19,7 @@ init_history() {
 
 init_aliases() {
   alias ll='ls -l'
-  alias ack='ack-grep'
+  alias ack='ack-grep -G "target|FileStore" --invert-file-match'
 
   # Databases
   alias riv='psql -h rivendell -U tripmaster'

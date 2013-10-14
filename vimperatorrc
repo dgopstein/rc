@@ -1,3 +1,7 @@
+" Disable Vimperator on gmail
+autocmd LocationChange .*                             js modes.passAllKeys = false
+autocmd LocationChange mail\\.google\\.com            js modes.passAllKeys = true
+
 " These settings prevent Vimperator from overwriting my preferred Firefox settings.
 set! browser.startup.page=1
 
@@ -54,6 +58,17 @@ imap <C-e> <Esc>O
 """ Navigation
 map < H
 map > L
+""" Tabs
+map <C-1> 1gt
+map <C-2> 2gt
+map <C-3> 3gt
+map <C-4> 4gt
+map <C-5> 5gt
+map <C-6> 6gt
+map <C-7> 7gt
+map <C-8> 8gt
+map <C-9> 9gt
+map <C-0> $gt
 """ Searching (Google)
 map  <C-k> ogoogle<Space>
 imap <C-k> <Esc>ogoogle<Space>

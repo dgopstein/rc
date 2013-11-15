@@ -25,6 +25,7 @@ nnoremap j 2j
 nnoremap k 2k
 nnoremap h 2h
 nnoremap l 2l
+noremap <C-f> /
 
 " Display
 "" show only the tab bar

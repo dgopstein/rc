@@ -1,7 +1,11 @@
-export PATH=$PATH:$HOME/opt/play-2.2.0
+export PATH=$PATH:$HOME/opt/play-2.2.1
 export PATH=$PATH:/usr/share/idea-IU-129.713/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+
+alias ack='ack-grep -G "target|FileStore/" --invert-file-match'
+
+alias o='cd ~/ongoing/'
 
 git-review() {
   if [[ -z $1 ]]; then

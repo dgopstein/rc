@@ -95,14 +95,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export TRHOME=$HOME
-#export JAVA_HOME=/usr/lib/jvm/java
-export JAVA_HOME=/usr/jdk1.7
-#export JAVA_HOME=/usr/jdk1.6
-#export TRTOP=/home/dgopstein/trsrc-MAINLINE
-#export JRUBY_HOME=/usr/local/commerce-jruby
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export BASEPATH=$JRUBY_HOME/bin:$PATH:$HOME/bin:$JAVA_HOME/bin
-export TRDATA_DIR=/home/dgopstein/tr-data
 export EDITOR=emacs
 export GWT_DIR=/home/site/gwt-2.2.0
 #export ECLIPSE_HOME=$HOME/.eclipse
@@ -112,7 +104,7 @@ export NO_TR='t'
 
 #mountpoint -q /usr/local/tripadvisor/providers/commerce-logs || sudo mount lumberjack:/logs/commerce-logs /usr/local/tripadvisor/providers/commerce-logs
 
-source $HOME/.common/commonrc
+source $HOME/.rc/commonrc
 
 TERM=xterm
-alias ack='ack-grep'
+PATH=$HOME/opt/bin:$PATH

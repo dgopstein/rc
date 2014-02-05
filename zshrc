@@ -18,6 +18,7 @@ init_history() {
 
 init_aliases() {
   alias ll='ls -l'
+  alias gcm='git checkout master'
 
   unalias sl
 }

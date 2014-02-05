@@ -5,6 +5,8 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
 alias ack='ack-grep -G "target|FileStore/" --invert-file-match'
 
+alias ply='sbt "project web"'
+
 alias o='cd ~/ongoing/'
 
 git-review() {
@@ -26,3 +28,5 @@ git-delete() {
     echo "No branch specified"
   fi
 }
+
+source ~/ongoing/conf/bashrc_updates.bash

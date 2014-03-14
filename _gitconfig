@@ -1,0 +1,6 @@
+[alias]
+    ci = commit
+    co = checkout
+[user]
+	email = dan@ongoing.ly
+	name = Dan

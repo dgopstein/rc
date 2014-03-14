@@ -4,3 +4,5 @@
 [user]
 	email = dan@ongoing.ly
 	name = Dan
+[push]
+	default = simple

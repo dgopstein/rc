@@ -6,3 +6,5 @@
 	name = Dan
 [push]
 	default = simple
+[merge]
+	tool = meld

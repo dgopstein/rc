@@ -4,7 +4,9 @@ RC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 dot_files=`ls $RC_DIR/_*`
 
 for dot_file in $dot_files; do
-    ln -s "$dot_file" "${dot_file/\/_//.}"
+    base=`basename $dot_file`
+    target="${base/_/.}"
+    echo ln -s "$dot_file" "$HOME/$target"
 done
 
 # Configure gnome settings

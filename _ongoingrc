@@ -3,7 +3,7 @@ export PATH=$PATH:/usr/share/idea-IU-129.713/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
-alias ack='ack-grep -G "target|FileStore/" --invert-file-match'
+alias ack='ack-grep --ignore-dir={cache,target}'
 
 alias ply='sbt "project web"'
 

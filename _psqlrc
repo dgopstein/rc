@@ -1,0 +1,13 @@
+\echo `date  +"%Y-%m-%d %H:%M:%S"`
+\encoding SQL_ASCII
+\set AUTOCOMMIT off
+\set VERBOSITY verbose
+\set PROMPT1 '%n@%m:%>/%/%x%# '
+\pset null '<<NULL>>'
+\pset linestyle unicode
+\pset border 2
+\pset pager off
+\pset format wrapped
+\timing
+set application_name to manni_desktop; commit;
+set bytea_output to escape; commit;

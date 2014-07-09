@@ -30,5 +30,3 @@ git-delete() {
     echo "No branch specified"
   fi
 }
-
-source ~/ongoing/conf/bashrc_updates.bash

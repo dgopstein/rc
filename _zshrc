@@ -18,7 +18,7 @@ init_aliases() {
   alias ll='ls -l'
   alias gcm='git checkout master'
 
-  unalias sl
+  #unalias sl
 }
 
 init_keybindings() {
@@ -40,12 +40,25 @@ init_themes() {
   unsetopt correctall
 
   export PATH=$HOME/bin:$HOME/opt/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
+
 }
 
 init_prompt() {
+  #load colors
+  autoload colors && colors
+  for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE GREY; do
+      eval $COLOR='%{$fg_no_bold[${(L)COLOR}]%}'  #wrap colours between %{ %} to avoid weird gaps in autocomplete
+      eval BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+  done
+  eval RESET='%{$reset_color%}'
+
+
+  export ZSH_THEME_GIT_PROMPT_PREFIX='(' # remove 'git:('
+  export ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg_bold[blue]%}+"
+  export ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
   #PROMPT="%{`echo "\a"`%}[%D{%H:%M:%S}] %n@%m:%~%# "
   PROMPT="%{`echo "\a"`%}" # bell at prompt to light up xmobar on command completion
-  PROMPT+='$(git_super_status)%B%~%b %# ' # git status
+  PROMPT+='$(git_super_status) %B%~%b %# ' # git status
 }
 
 preexec() {

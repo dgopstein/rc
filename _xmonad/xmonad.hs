@@ -87,7 +87,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((0                    , 0x1008ff16  ), spawn "mocp --prev")
     , ((0                    , 0x1008ff17  ), spawn "mocp --next")
     , ((0                    , 0x1008ff14  ), spawn "mocp --toggle-pause")
-    , ((modMask              , xK_Print    ), spawn "scrot -e 'mv $f ~/Screenshots'")
+    --take a screenshot of entire display 
+    , ((modMask , xK_Print ), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1")
+    --take a screenshot of focused window 
+    , ((modMask .|. shiftMask, xK_Print ), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1-u")
     ]
     ++
  

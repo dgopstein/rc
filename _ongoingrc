@@ -5,7 +5,9 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
 alias ack='ack-grep --ignore-dir={cache,target}'
 
-alias ply='sbt "project web"'
+alias plycon="sbt -J-Xmx7g 'project importer' console"
+alias plycons="sbt -J-Xmx7g 'project importer' '~console'"
+alias plyrun="sbt -J-Xmx2g 'project web' run"
 
 alias o='cd ~/ongoing/'
 
@@ -28,5 +30,3 @@ git-delete() {
     echo "No branch specified"
   fi
 }
-
-source ~/ongoing/conf/bashrc_updates.bash

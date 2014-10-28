@@ -1,6 +1,8 @@
 [alias]
     ci = commit
     co = checkout
+    dt = difftool -d .
+    dtm = difftool master... -d .
 [user]
 	email = dan@ongoing.ly
 	name = Dan

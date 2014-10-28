@@ -1,7 +1,13 @@
-export PATH=$PATH:$HOME/opt/play-2.2.0
+export PATH=$PATH:$HOME/opt/play-2.2.1
 export PATH=$PATH:/usr/share/idea-IU-129.713/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+
+alias ack='ack-grep --ignore-dir={cache,target}'
+
+alias ply='sbt "project web"'
+
+alias o='cd ~/ongoing/'
 
 git-review() {
   if [[ -z $1 ]]; then
@@ -22,3 +28,5 @@ git-delete() {
     echo "No branch specified"
   fi
 }
+
+source ~/ongoing/conf/bashrc_updates.bash

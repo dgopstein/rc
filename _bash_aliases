@@ -1,0 +1,9 @@
+source $HOME/.rc/commonrc
+
+alias ack='ack-grep'
+
+export EDITOR=vim
+export TERM=xterm
+export HISTSIZE=10000
+export HISTFILESIZE=100000
+

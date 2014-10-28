@@ -2,7 +2,6 @@ init_env() {
   export EDITOR=vim
   export ZSH_THEME_GIT_PROMPT_NOCACHE=t
 
-
   source ~/.ongoingrc
 
   echo "Hi Dan, your code sucks. -Graham"
@@ -19,21 +18,9 @@ init_history() {
 
 init_aliases() {
   alias ll='ls -l'
-  alias ack='ack-grep -G "target|FileStore" --invert-file-match'
+  alias gcm='git checkout master'
 
-  # Databases
-  alias riv='psql -h rivendell -U tripmaster'
-  alias rov='psql -h rivendell -U tripmaster_ro -d tripmaster'
-  alias div='psql -h rivendell-dev -U tripmaster'
-  alias dev='psql -h dev-db -U tripmaster'
-  alias cdb='psql -h commerce-db.tripadvisor.com -U provider_tool_test'
-  alias loc='psql provider_tool_test'
-  alias whs='sqsh -U CommerceWHReports -S statistics -P whReports -D Commerce -m pretty'
-  alias mon='psql -h tripmonster -U tripmonster'
-
-  alias stat='svntr stat | grep -v "^?"'
-  alias pt='commerce-jruby -C $TRTOP/rails/provider_tool --debug -J-Xmx8g -J-Xdebug -J-Xrunjdwp:transport=dt_socket,address=1044,server=y,suspend=n script/server'
-
+  unalias sl
 }
 
 init_keybindings() {
@@ -53,7 +40,7 @@ init_themes() {
   source ~/.zsh/git-prompt/zsh-git-prompt.sh # https://github.com/olivierverdier/zsh-git-prompt
   unsetopt correctall
 
-  export PATH=/home/dan/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
+  export PATH=$HOME/bin:$HOME/opt/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
 }
 
 init_prompt() {
@@ -82,10 +69,10 @@ precmd() {
 }
 
 init_history
-init_aliases
 init_env
 init_themes
 init_prompt
+init_aliases
 init_keybindings
 
 # Userland commands

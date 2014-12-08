@@ -57,8 +57,8 @@ init_prompt() {
   export ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg_bold[blue]%}+"
   export ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
   #PROMPT="%{`echo "\a"`%}[%D{%H:%M:%S}] %n@%m:%~%# "
-  PROMPT="%{`echo "\a"`%}" # bell at prompt to light up xmobar on command completion
-  PROMPT+='$(git_super_status) %B%~%b %# ' # git status
+  #PROMPT="%{`echo "\a"`%}" # bell at prompt to light up xmobar on command completion
+  PROMPT='$(git_super_status) %B%~%b %# ' # git status
 }
 
 preexec() {

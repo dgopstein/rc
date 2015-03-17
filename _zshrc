@@ -1,6 +1,6 @@
 init_env() {
   export EDITOR=vim
-  export ZSH_THEME_GIT_PROMPT_NOCACHE=t
+  export ARCHFLAGS="-arch x86_64"
 
   echo "Hi Dan, your code sucks. -Graham"
 }
@@ -17,6 +17,8 @@ init_history() {
 init_aliases() {
   alias ll='ls -l'
   alias gcm='git checkout master'
+  alias clj='java -cp "$HOME/opt/clojure-1.6.0/clojure-1.6.0.jar" clojure.main'
+  alias clojure=clj
 
   #unalias sl
 }
@@ -34,13 +36,13 @@ init_keybindings() {
 
 init_themes() {
   export ZSH=$HOME/.oh-my-zsh
+  export ZSH_THEME_GIT_PROMPT_NOCACHE=t
   plugins=(git)
   source $ZSH/oh-my-zsh.sh
   source ~/.zsh/git-prompt/zsh-git-prompt.sh # https://github.com/olivierverdier/zsh-git-prompt
   unsetopt correctall
 
-  export PATH=$HOME/bin:$HOME/opt/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
-
+  export PATH=$HOME/bin:$HOME/opt/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
 }
 
 init_prompt() {
@@ -86,6 +88,3 @@ init_themes
 init_prompt
 init_aliases
 init_keybindings
-
-# Userland commands
-

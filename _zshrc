@@ -42,7 +42,27 @@ init_themes() {
   source ~/.zsh/git-prompt/zsh-git-prompt.sh # https://github.com/olivierverdier/zsh-git-prompt
   unsetopt correctall
 
-  export PATH=$HOME/bin:$HOME/opt/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH
+}
+
+init_path() {
+  pathdirs=(
+    $HOME/bin 
+    $HOME/opt/bin 
+    /usr/lib/lightdm/lightdm 
+    /usr/local/sbin 
+    /usr/local/heroku/bin 
+    /usr/local/bin 
+    /usr/sbin 
+    /usr/bin 
+    /sbin 
+    /bin 
+    /usr/games 
+################
+    $PATH 
+################
+    $HOME/.rvm/bin 
+  )
+  export PATH=${(j.:.)pathdirs} 
 }
 
 init_prompt() {
@@ -85,6 +105,7 @@ precmd() {
 init_history
 init_env
 init_themes
+init_path
 init_prompt
 init_aliases
 init_keybindings

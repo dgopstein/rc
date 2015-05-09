@@ -1,12 +1,17 @@
-[alias]
-    ci = commit
-    co = checkout
-    dt = difftool -d .
-    dtm = difftool master... -d .
 [user]
-	email = dan@ongoing.ly
-	name = Dan
+	name = Dan Gopstein
+	email = dan@gopstein.com
+[alias]
+  ci = commit
+  co = checkout
+	undo-commit = reset --soft HEAD^
+[merge]
+	tool = diffmerge
 [push]
 	default = simple
-[merge]
-	tool = meld
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""

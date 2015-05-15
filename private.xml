@@ -1,48 +1,43 @@
 <?xml version="1.0"?>
-
-<!-- karabiner custom keybindings
-
-  // Only on internal keyboard
-  <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x021a</device_only>
-     
-  // An example of devicevendordef,deviceproductdef
-  <devicevendordef>
-    <vendorname>HEWLETT_PACKARD</vendorname>
-    <vendorid>0x03f0</vendorid>
-  </devicevendordef>
-
-  <deviceproductdef>
-    <productname>MY_HP_KEYBOARD</productname>
-    <productid>0x0224</productid>
-  </deviceproductdef>
-
-    <device_only>DeviceVendor::HEWLETT_PACKARD, DeviceProduct::MY_HP_KEYBOARD</device_only>
-     
-     
-  // Only in excel
-    <only>EXCEL</only>
--->
+<deviceproductdef>
+  <productname>JAPANESE_BLUETOOTH</productname>
+  <productid>0x0257</productid>
+</deviceproductdef>
 
 <root>
   <item>
-    <name>Eisuu/Kana to Control</name>
-    <identifier>private.jp2control</identifier>
-    <autogen>__KeyToKey__ KeyCode::JIS_EISUU, KeyCode::CONTROL_L</autogen>
-    <autogen>__KeyToKey__ KeyCode::JIS_KANA, KeyCode::CONTROL_R</autogen>
-  </item>
+    <name>Japanese Bluetooth</name>
+    <item>
+      <name>Eisuu/Kana to Control</name>
+      <identifier>private.jp2control</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+      <autogen>__KeyToKey__ KeyCode::JIS_EISUU, KeyCode::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::JIS_KANA, KeyCode::CONTROL_R</autogen>
+    </item>
 
-  <item>
-    <name>Semicolon as Shift</name>
-    <identifier>private.colon_as_enter</identifier>
-    <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::SHIFT_R</autogen>
-    <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::CONTROL_L, KeyCode::SEMICOLON</autogen>
-  </item>
+    <item>
+      <name>Brackets next to P</name>
+      <identifier>private.brackets2p</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+      <autogen>__KeyToKey__ KeyCode::JIS_ATMARK, KeyCode::JIS_BRACKET_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::JIS_BRACKET_LEFT, KeyCode::JIS_BRACKET_RIGHT</autogen>
+    </item>
 
-  <item>
-    <name>Colon to Return</name>
-    <!--<appendix>(+ Control+Semicolon to Semicolon)</appendix>-->
-    <identifier>remap.colon2return</identifier>
-    <autogen>__KeyToKey__ KeyCode::JIS_COLON, KeyCode::RETURN</autogen>
-    <autogen>__KeyToKey__ KeyCode::JIS_COLON, ModifierFlag::CONTROL_L, KeyCode::JIS_COLON</autogen>
+    <item>
+      <name>Semicolon as Shift</name>
+      <identifier>private.colon_as_enter</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::SHIFT_R</autogen>
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::CONTROL_L, KeyCode::SEMICOLON</autogen>
+    </item>
+
+    <item>
+      <name>Colon to Return</name>
+      <!--<appendix>(+ Control+Semicolon to Semicolon)</appendix>-->
+      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+      <identifier>remap.colon2return</identifier>
+      <autogen>__KeyToKey__ KeyCode::JIS_COLON, KeyCode::RETURN</autogen>
+      <autogen>__KeyToKey__ KeyCode::JIS_COLON, ModifierFlag::CONTROL_L, KeyCode::JIS_COLON</autogen>
+    </item>
   </item>
 </root>

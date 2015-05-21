@@ -39,5 +39,12 @@
       <autogen>__KeyToKey__ KeyCode::JIS_COLON, KeyCode::RETURN</autogen>
       <autogen>__KeyToKey__ KeyCode::JIS_COLON, ModifierFlag::CONTROL_L, KeyCode::JIS_COLON</autogen>
     </item>
+
+    <item>
+      <name>Underscore to tilde</name>
+      <identifier>private.underscore2tilde</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+      <autogen>__KeyToKey__ KeyCode::JIS_UNDERSCORE, KeyCode::BACKQUOTE</autogen>
+    </item>
   </item>
 </root>

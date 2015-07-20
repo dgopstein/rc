@@ -24,6 +24,21 @@
     </item>
 
     <item>
+      <name>Colon as Quotes</name>
+      <identifier>private.colon_as_quotes</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+      <autogen>__KeyToKey__ KeyCode::JIS_COLON, ModifierFlag::SHIFT_L, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::JIS_COLON,                        KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
+    </item>
+
+    <item>
+      <name>S+Semicolon as Colon</name>
+      <identifier>private.shift_semicolon_as_colon</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::SHIFT_L, KeyCode::JIS_COLON</autogen>
+    </item>
+
+    <item>
       <name>Semicolon as Shift</name>
       <identifier>private.colon_as_enter</identifier>
       <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>

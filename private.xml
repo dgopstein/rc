@@ -8,58 +8,67 @@
   <item>
     <name>Japanese Bluetooth</name>
     <item>
-      <name>Eisuu/Kana to Control</name>
-      <identifier>private.jp2control</identifier>
+      <name>Eisuu/Kana to Control/Enter</name>
+      <identifier>private.jp2control_enter</identifier>
       <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
       <autogen>__KeyToKey__ KeyCode::JIS_EISUU, KeyCode::CONTROL_L</autogen>
-      <autogen>__KeyToKey__ KeyCode::JIS_KANA, KeyCode::CONTROL_R</autogen>
+      <autogen>__KeyToKey__ KeyCode::JIS_KANA, KeyCode::RETURN</autogen>
     </item>
 
     <item>
-      <name>Brackets next to P</name>
-      <identifier>private.brackets2p</identifier>
+      <name>CMDs to Alt/Shift</name>
+      <identifier>private.jp_cmd2alt_shift</identifier>
       <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
-      <autogen>__KeyToKey__ KeyCode::JIS_ATMARK, KeyCode::JIS_BRACKET_LEFT</autogen>
-      <autogen>__KeyToKey__ KeyCode::JIS_BRACKET_LEFT, KeyCode::JIS_BRACKET_RIGHT</autogen>
+      <!-- I already remapped command->control so these are wrong
+        <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+        <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::SHIFT_R</autogen>
+      -->
+      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::SHIFT_R</autogen>
     </item>
 
-    <item>
-      <name>Colon as Quotes</name>
-      <identifier>private.colon_as_quotes</identifier>
-      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
-      <autogen>__KeyToKey__ KeyCode::JIS_COLON, ModifierFlag::SHIFT_L, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
-      <autogen>__KeyToKey__ KeyCode::JIS_COLON,                        KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
-    </item>
+    <!--
+         These commands are largely obviated by: https://github.com/tekezo/Karabiner/blob/master/src/core/server/Resources/include/checkbox/languages/japanese/keyboard_layouts.xml
+         Which can be found in the interface under:
+         For Japanese -> Change Keyboard Layout -> Use Japanese Keyboard as US Keyboard
+      <item>
+        <name>Eisuu/Kana to Control</name>
+        <identifier>private.jp2control</identifier>
+        <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+        <autogen>__KeyToKey__ KeyCode::JIS_EISUU, KeyCode::CONTROL_L</autogen>
+        <autogen>__KeyToKey__ KeyCode::JIS_KANA, KeyCode::CONTROL_R</autogen>
+      </item>
 
-    <item>
-      <name>S+Semicolon as Colon</name>
-      <identifier>private.shift_semicolon_as_colon</identifier>
-      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
-      <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::SHIFT_L, KeyCode::JIS_COLON</autogen>
-    </item>
+      <item>
+        <name>Brackets next to P</name>
+        <identifier>private.brackets2p</identifier>
+        <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+        <autogen>__KeyToKey__ KeyCode::JIS_ATMARK, KeyCode::JIS_BRACKET_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::JIS_BRACKET_LEFT, KeyCode::JIS_BRACKET_RIGHT</autogen>
+      </item>
 
-    <item>
-      <name>Semicolon as Shift</name>
-      <identifier>private.colon_as_enter</identifier>
-      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
-      <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::SHIFT_R</autogen>
-      <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::CONTROL_L, KeyCode::SEMICOLON</autogen>
-    </item>
+      <item>
+        <name>Semicolon as Shift</name>
+        <identifier>private.colon_as_enter</identifier>
+        <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+        <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::SHIFT_R</autogen>
+        <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::CONTROL_L, KeyCode::SEMICOLON</autogen>
+      </item>
 
-    <item>
-      <name>Colon to Return</name>
-      <!--<appendix>(+ Control+Semicolon to Semicolon)</appendix>-->
-      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
-      <identifier>remap.colon2return</identifier>
-      <autogen>__KeyToKey__ KeyCode::JIS_COLON, KeyCode::RETURN</autogen>
-      <autogen>__KeyToKey__ KeyCode::JIS_COLON, ModifierFlag::CONTROL_L, KeyCode::JIS_COLON</autogen>
-    </item>
+      <item>
+        <name>Colon to Return</name>
+        <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+        <identifier>remap.colon2return</identifier>
+        <autogen>__KeyToKey__ KeyCode::JIS_COLON, KeyCode::RETURN</autogen>
+        <autogen>__KeyToKey__ KeyCode::JIS_COLON, ModifierFlag::CONTROL_L, KeyCode::JIS_COLON</autogen>
+      </item>
 
-    <item>
-      <name>Underscore to tilde</name>
-      <identifier>private.underscore2tilde</identifier>
-      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
-      <autogen>__KeyToKey__ KeyCode::JIS_UNDERSCORE, KeyCode::BACKQUOTE</autogen>
-    </item>
+      <item>
+        <name>Underscore to tilde</name>
+        <identifier>private.underscore2tilde</identifier>
+        <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
+        <autogen>__KeyToKey__ KeyCode::JIS_UNDERSCORE, KeyCode::BACKQUOTE</autogen>
+      </item>
+    -->
   </item>
 </root>

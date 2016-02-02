@@ -1,6 +1,7 @@
 init_env() {
   export EDITOR=vim
   export ARCHFLAGS="-arch x86_64"
+  export R_HOME=/usr/local/Cellar/r/3.1.3/R.framework/Resources
 
   echo "Hi Dan, your code sucks. -Graham"
 }

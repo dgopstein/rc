@@ -21,4 +21,4 @@ set expandtab
 "au Syntax clojure RainbowParenthesesLoadSquare
 "au Syntax clojure RainbowParenthesesLoadBraces
 
-map <C-A> :w
+"map <C-A> :w

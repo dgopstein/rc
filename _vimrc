@@ -22,3 +22,5 @@ set expandtab
 "au Syntax clojure RainbowParenthesesLoadBraces
 
 "map <C-A> :w
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown

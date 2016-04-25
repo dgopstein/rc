@@ -5,6 +5,7 @@
   ci = commit
   co = checkout
 	undo-commit = reset --soft HEAD^
+	unadd = reset HEAD
 [merge]
 	tool = diffmerge
 [push]

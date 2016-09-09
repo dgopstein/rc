@@ -16,15 +16,17 @@
     </item>
 
     <item>
-      <name>CMDs to Alt/Shift</name>
-      <identifier>private.jp_cmd2alt_shift</identifier>
+      <name>Right CMD to Shift</name>
+      <identifier>private.jp_rcmd2shift</identifier>
       <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
-      <!-- I already remapped command->control so these are wrong
-        <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
-        <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::SHIFT_R</autogen>
-      -->
-      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::OPTION_L</autogen>
       <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::SHIFT_R</autogen>
+    </item>
+
+    <item>
+      <name>Left CTRL to CMD</name>
+      <identifier>private.jp_lctrl2cmd</identifier>
+      <!-- I already remapped command->control so this brings it back -->
+      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>-->
     </item>
 
     <!--

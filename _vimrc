@@ -24,3 +24,6 @@ set expandtab
 "map <C-A> :w
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Don't delay ctrl-c in sql mode
+let g:ftplugin_sql_omni_key = '<C-j>'

@@ -25,6 +25,7 @@
     <item>
       <name>Left CTRL to CMD</name>
       <identifier>private.jp_lctrl2cmd</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::JAPANESE_BLUETOOTH</device_only>
       <!-- I already remapped command->control so this brings it back -->
       <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>-->
     </item>

@@ -15,6 +15,9 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/gnom
 ### checkout RC files
 git clone https://github.com/dgopstein/rc.git .rc
 
+### emacs keybindings everywhere
+gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
 ### change to urxvt
 sudo update-alternatives --config x-terminal-emulator
 

@@ -20,6 +20,7 @@ init_aliases() {
   alias gcm='git checkout master'
   alias clj='java -cp "$HOME/opt/clojure-1.8.0/clojure-1.8.0.jar" clojure.main'
   alias clojure=clj
+  alias jack='ack --ignore-dir=_site' # ack for jekyll projects
 
   #unalias sl
 }

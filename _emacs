@@ -25,3 +25,6 @@
 
 ;; show parens
 (show-paren-mode 1)
+
+;; color theme
+(load-theme 'wombat)

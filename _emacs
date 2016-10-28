@@ -6,6 +6,7 @@
 
 ;; Make emacs work in mac
 (set-keyboard-coding-system nil)
+(setq x-alt-keysym 'meta)
 
 ;; Install MELPA package manager
 (when (>= emacs-major-version 24)
@@ -22,9 +23,15 @@
 ;; Show line numbers
 (global-linum-mode t)
 (setq column-number-mode t)
+(setq linum-format "%4d  ")
 
 ;; show parens
 (show-paren-mode 1)
 
 ;; color theme
 (load-theme 'wombat)
+
+;; Keybindings
+(global-set-key (kbd "M-s") 'isearch-forward-regexp)
+(global-set-key (kbd "M-r") 'query-replace-regexp)
+

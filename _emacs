@@ -87,6 +87,6 @@
 ; (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
 
 ; enable evil-cleverparens
-(require 'evil-cleverparens)
-(add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+;(require 'evil-cleverparens)
+;(add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 

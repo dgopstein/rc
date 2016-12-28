@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Copy all git RC files from version control to ~/.xxxx files
 RC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 

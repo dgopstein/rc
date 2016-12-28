@@ -22,6 +22,7 @@ init_aliases() {
   alias clj='java -cp "$HOME/opt/clojure-1.8.0/clojure-1.8.0.jar" clojure.main'
   alias clojure=clj
   alias jack='ack --ignore-dir=_site --ignore-dir=_sass/vendor --ignore-dir=.sass-cache' # ack for jekyll projects
+  alias jag='ag --ignore-dir=_site --ignore-dir=_sass/vendor --ignore-dir=.sass-cache' # ag for jekyll projects
 
   #unalias sl
 }

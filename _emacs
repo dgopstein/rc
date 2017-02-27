@@ -1,6 +1,9 @@
 ;; prevent silly initial splash screen
 (setq inhibit-splash-screen t)
 
+;; no tabs
+(setq-default indent-tabs-mode nil)
+
 ;; Make ctrl-h backspace
 ;(define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -90,3 +93,13 @@
 ;(require 'evil-cleverparens)
 ;(add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 
+; ruby
+(unless (package-installed-p 'inf-ruby) (package-install 'inf-ruby)) ; install inf-ruby
+(autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
+(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+(add-hook 'compilation-filter-hook 'inf-ruby-auto-enter)
+
+(global-set-key (kbd "C-c C-j") 'ruby-send-line)
+
+; enable projectile (for easy file finding)
+(projectile-global-mode)

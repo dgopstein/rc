@@ -1,1 +1,0 @@
-("~/.rc/" "~/nyu/confusion/paper_fse/" "~/nyu/confusion/atoms/")

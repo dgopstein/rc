@@ -14,4 +14,4 @@ done
 # Configure gnome settings
 # use `dconf watch /` to observe changes on the fly
 
-echo dconf write /org/gnome/settings-daemon/peripherals/mouse/left-handed true # make mouse left-handed
+# echo dconf write /org/gnome/settings-daemon/peripherals/mouse/left-handed true # make mouse left-handed

@@ -4,6 +4,11 @@
 ;; no tabs
 (setq-default indent-tabs-mode nil)
 
+;; show trailing whitespace
+(defun enable-trailing-whitespace ()
+  (setq show-trailing-whitespace t))
+(add-hook 'prog-mode-hook #'enable-trailing-whitespace)
+
 ;; Make ctrl-h backspace
 ;(define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-h") 'delete-backward-char)

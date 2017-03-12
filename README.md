@@ -1,5 +1,8 @@
-### packages
-sudo apt-get install vim emacs git zsh tmux rxvt-unicode-256color ruby scala ack-grep htop meld pidgin
+### CLI packages
+sudo apt-get install vim emacs git zsh tmux rxvt-unicode-256color ruby scala ack-grep silversearcher-ag htop
+
+### GUI packages
+sudo apt-get install meld pidgin
 
 ### install chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

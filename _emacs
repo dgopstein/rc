@@ -3,6 +3,9 @@
 
 ;; no tabs
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+;(setq indent-line-function 'insert-tab)
+(setq tab-stop-list (number-sequence 2 200 2))
 
 ;; show trailing whitespace
 (defun enable-trailing-whitespace ()

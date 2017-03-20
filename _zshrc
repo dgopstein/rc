@@ -3,6 +3,10 @@ init_env() {
   export ARCHFLAGS="-arch x86_64"
   export R_HOME=/usr/local/Cellar/r/3.1.3/R.framework/Resources
   export NODE_PATH=/usr/local/lib/node_modules
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
   echo "Hi Dan, your code sucks. -Graham"
 }
@@ -18,7 +22,7 @@ init_history() {
 
 init_aliases() {
   alias e='emacs -nw' # editor
-  alias ll='ls -l'
+  alias ll='ls -lB' # ignore ~ files
   alias gcm='git checkout master'
   alias clj='java -cp "$HOME/opt/clojure-1.8.0/clojure-1.8.0.jar" clojure.main'
   alias clojure=clj
@@ -118,5 +122,3 @@ init_path
 init_prompt
 init_aliases
 init_keybindings
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

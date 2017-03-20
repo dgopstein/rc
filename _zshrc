@@ -88,12 +88,19 @@ init_prompt() {
   eval RESET='%{$reset_color%}'
 
 
+  ## SSH host
+  if [[ -z "$SSH_CLIENT" ]]; then
+    prompt_host=""
+  else
+    prompt_host=$CYAN$(hostname -s)$WHITE:$RESET
+  fi
+
   export ZSH_THEME_GIT_PROMPT_PREFIX='(' # remove 'git:('
   export ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg_bold[blue]%}+"
   export ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
   #PROMPT="%{`echo "\a"`%}[%D{%H:%M:%S}] %n@%m:%~%# "
   #PROMPT="%{`echo "\a"`%}" # bell at prompt to light up xmobar on command completion
-  PROMPT='$(git_super_status) %B%~%b %# ' # git status
+  PROMPT='$(git_super_status) ${prompt_host}%B%~%b %# ' # git status
 }
 
 preexec() {

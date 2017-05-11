@@ -61,8 +61,8 @@
 (define-key evil-insert-state-map (kbd "C-p") 'evil-scroll-line-up)
 (define-key evil-insert-state-map (kbd "C-n") 'evil-scroll-line-down)
 (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
-
-;; I don't know why this is necessary:
+(define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
+(define-key evil-insert-state-map (kbd "C-d") 'delete-forward-char)
 (define-key evil-insert-state-map (kbd "C-w") 'evil-delete-backward-word)
 
 ;; move between windows like a civilized fucking human being

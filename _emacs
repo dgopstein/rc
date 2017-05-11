@@ -2,8 +2,12 @@
 (setq inhibit-splash-screen t)
 
 ;; no tabs
+(setq c-basic-offset 2)
+(setq css-indent-offset 2)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
+(setq js-indent-level 2)
+(setq default-tab-width 2)
 ;(setq indent-line-function 'insert-tab)
 (setq tab-stop-list (number-sequence 2 200 2))
 
@@ -99,6 +103,10 @@
 ; (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
 
 ; enable evil-cleverparens
+;(require 'smartparens-config)
+;(setq smartparens-strict-mode t)
+;(add-hook 'clojure-mode-hook #'smartparens-mode)
+
 ;(require 'evil-cleverparens)
 ;(add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 

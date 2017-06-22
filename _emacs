@@ -110,6 +110,15 @@
 ;(require 'evil-cleverparens)
 ;(add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 
+; clojure
+
+;; lookup library function signatures as you type
+(add-hook 'cider-repl-mode-hook #'eldoc-mode)
+
+;; keybindings for executing code
+(global-set-key (kbd "C-c C-j") 'cider-eval-last-sexp)
+(global-set-key (kbd "C-RET") 'cider-eval-defun-at-point)
+
 ; ruby
 (unless (package-installed-p 'inf-ruby) (package-install 'inf-ruby)) ; install inf-ruby
 (autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
@@ -120,3 +129,10 @@
 
 ; enable projectile (for easy file finding)
 (projectile-global-mode)
+
+; better defaults for moving files
+; https://emacs.stackexchange.com/questions/5603/how-to-quickly-copy-move-file-in-emacs-dired
+(setq dired-dwim-target t)
+
+; remove menu bar
+(menu-bar-mode -1)

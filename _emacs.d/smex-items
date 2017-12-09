@@ -1,0 +1,23 @@
+
+;; ----- smex-history -----
+(
+ flyspell-correct-word-before-point
+ flyspell-goto-next-error
+ flyspell-word
+ package-install
+ counsel-ag
+ swiper
+ whois
+)
+
+;; ----- smex-data -----
+(
+ (arp . 1)
+ (whois . 2)
+ (package-install . 2)
+ (swiper . 1)
+ (counsel-ag . 2)
+ (flyspell-word . 2)
+ (flyspell-goto-next-error . 2)
+ (flyspell-correct-word-before-point . 2)
+)

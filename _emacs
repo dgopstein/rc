@@ -42,6 +42,10 @@
 (setq column-number-mode t)
 (setq linum-format "%4d  ")
 
+;; Maximum line width
+(setq-default fill-column 80)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 ;; highlight matching parens
 (show-paren-mode 1)
 (setq show-paren-delay 0)
@@ -99,6 +103,9 @@
 ; Enable evil mode (vim emulation) and all customizations
 (load-file "~/.emacs.d/personal/evil.el")
 
+; Company flyspell spell-check configuration
+(load-file "~/.emacs.d/personal/flyspell.el")
+
 ; Company auto-complete configuration
 (load-file "~/.emacs.d/personal/company-mode.el")
 
@@ -155,3 +162,7 @@
 
 ; remove menu bar
 (menu-bar-mode -1)
+
+; Use counsel/ivy for projectile completion
+(add-hook 'after-init-hook 'counsel-mode)
+(counsel-projectile-on)

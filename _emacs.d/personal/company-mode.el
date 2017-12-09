@@ -9,6 +9,12 @@
 
 (setq company-idle-delay 0.3) ; default is 0.5
 
+;; tab-n-go for selection completions with only the tab key
+(company-tng-configure-default)
+
+;; Arrow usage issue
+;; https://emacs.stackexchange.com/questions/8092/arrow-and-m-n-m-p-dont-work-with-company-mode-in-terminal-when-esc-aborts-compl
+
 ;; tooltip colors
 ;; https://github.com/mattrudder/dotfiles/blob/69f0f5766f2444b834429e98e1c88f29c9021560/emacs.d/themes/wombat-custom-theme.el
 (require 'color)

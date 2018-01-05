@@ -42,6 +42,10 @@
 (setq column-number-mode t)
 (setq linum-format "%4d  ")
 
+;; Maximum line width
+(setq-default fill-column 80)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 ;; highlight matching parens
 (show-paren-mode 1)
 (setq show-paren-delay 0)
@@ -99,6 +103,12 @@
 ; Enable evil mode (vim emulation) and all customizations
 (load-file "~/.emacs.d/personal/evil.el")
 
+; Company flyspell spell-check configuration
+(load-file "~/.emacs.d/personal/flyspell.el")
+
+; Company auto-complete configuration
+(load-file "~/.emacs.d/personal/company-mode.el")
+
 ; enable lispy (paredit with vi-like keybindings)
 ; (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
 
@@ -118,6 +128,23 @@
 ;; keybindings for executing code
 (global-set-key (kbd "C-c C-j") 'cider-eval-last-sexp)
 (global-set-key (kbd "C-RET") 'cider-eval-defun-at-point)
+(global-set-key (kbd "C-c C-v C-b") 'cider-eval-buffer)
+
+;(require 'ac-cider)
+;(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+;(add-hook 'cider-mode-hook 'ac-cider-setup)
+;(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+;(eval-after-load "auto-complete"
+;  '(progn
+;     (add-to-list 'ac-modes 'cider-mode)
+;          (add-to-list 'ac-modes 'cider-repl-mode)))
+;;(setq ac-cider-show-ns nil) ; disable namespace in popup
+;;; tab completion
+;(defun set-auto-complete-as-completion-at-point-function ()
+;  (setq completion-at-point-functions '(auto-complete)))
+;
+;(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;(add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 ; ruby
 (unless (package-installed-p 'inf-ruby) (package-install 'inf-ruby)) ; install inf-ruby
@@ -136,3 +163,7 @@
 
 ; remove menu bar
 (menu-bar-mode -1)
+
+; Use counsel/ivy for projectile completion
+(add-hook 'after-init-hook 'counsel-mode)
+(counsel-projectile-on)

@@ -128,6 +128,7 @@
 ;; keybindings for executing code
 (global-set-key (kbd "C-c C-j") 'cider-eval-last-sexp)
 (global-set-key (kbd "C-RET") 'cider-eval-defun-at-point)
+(global-set-key (kbd "C-c C-v C-b") 'cider-eval-buffer)
 
 ;(require 'ac-cider)
 ;(add-hook 'cider-mode-hook 'ac-flyspell-workaround)

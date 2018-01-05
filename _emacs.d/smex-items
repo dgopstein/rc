@@ -1,23 +1,32 @@
 
 ;; ----- smex-history -----
 (
- flyspell-correct-word-before-point
- flyspell-goto-next-error
- flyspell-word
  package-install
- counsel-ag
- swiper
- whois
+ ams-tex-mode
+ TeX-complete-symbol
+ LaTeX-mode
+ TeX-latex-mode
+ describe-mode
+ tex-pdf-mode
 )
 
 ;; ----- smex-data -----
 (
  (arp . 1)
  (whois . 2)
- (package-install . 2)
+ (package-install . 7)
  (swiper . 1)
  (counsel-ag . 2)
  (flyspell-word . 2)
  (flyspell-goto-next-error . 2)
  (flyspell-correct-word-before-point . 2)
+ (flyspell-mode . 2)
+ (TeX-complete-symbol . 3)
+ (TeX-mode . 2)
+ (tex-mode . 1)
+ (describe-mode . 3)
+ (tex-pdf-mode . 1)
+ (TeX-latex-mode . 2)
+ (LaTeX-mode . 1)
+ (ams-tex-mode . 1)
 )

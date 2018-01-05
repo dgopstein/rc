@@ -31,3 +31,6 @@
 (eval-after-load "flyspell"
   '(progn
      (fset 'flyspell-emacs-popup 'flyspell-emacs-popup-textual)))
+
+;; Always load flyspell for Tex docs
+(add-hook 'LaTeX-mode-hook '(flyspell-mode t))

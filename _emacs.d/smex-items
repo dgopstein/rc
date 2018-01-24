@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ sort-numeric-fields
+ auto-complete-mode
  package-install
  ams-tex-mode
- TeX-complete-symbol
  LaTeX-mode
  TeX-latex-mode
  describe-mode
- tex-pdf-mode
 )
 
 ;; ----- smex-data -----
@@ -29,4 +29,6 @@
  (TeX-latex-mode . 2)
  (LaTeX-mode . 1)
  (ams-tex-mode . 1)
+ (auto-complete-mode . 1)
+ (sort-numeric-fields . 1)
 )

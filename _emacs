@@ -73,8 +73,8 @@
 (global-set-key (kbd "M-r") 'query-replace-regexp)
 
 ;; langauge modes
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+;;(require 'yaml-mode)
+;;(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
 (setq auto-mode-alist
@@ -124,11 +124,21 @@
 
 ;; lookup library function signatures as you type
 (add-hook 'cider-repl-mode-hook #'eldoc-mode)
+(add-hook 'cider-mode-hook #'eldoc-mode)
 
 ;; keybindings for executing code
-(global-set-key (kbd "C-c C-j") 'cider-eval-last-sexp)
-(global-set-key (kbd "C-RET") 'cider-eval-defun-at-point)
-(global-set-key (kbd "C-c C-v C-b") 'cider-eval-buffer)
+
+(defun my-cider-mode-config ()
+  "For use in `cider-mode-hook'."
+  (local-set-key (kbd "C-c C-j") 'cider-eval-last-sexp)
+  (local-set-key (kbd "C-RET") 'cider-eval-defun-at-point)
+  (local-set-key (kbd "C-c C-v C-b") 'cider-eval-buffer)
+  (local-unset-key (kbd "C-c M-."))
+  (local-set-key (kbd "C-c M-.") 'cider-find-var)
+  )
+
+;; add to hook
+(add-hook 'cider-mode-hook 'my-cider-mode-config)
 
 ;(require 'ac-cider)
 ;(add-hook 'cider-mode-hook 'ac-flyspell-workaround)

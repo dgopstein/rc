@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+file_lines = ARGV.map{|a| a.split(/(.*?)(?::(\d+))?$/).drop(1)}
+
+arg_str = file_lines.map{|file, line| (line ? "+#{line} " : "") + file}.join(' ')
+
+`emacs -nw #{arg_str}`
+

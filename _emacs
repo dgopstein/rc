@@ -25,7 +25,7 @@
 (set-keyboard-coding-system nil)
 (setq x-alt-keysym 'meta)
 
-;; Install MELPA package manager
+; Install MELPA package manager
 (when (>= emacs-major-version 24)
  (require 'package)
  (add-to-list
@@ -53,12 +53,12 @@
 (setq show-paren-style 'parenthesis) ; highlight brackets if visible, else entire expression
 
 ;; highlight three of the closest delimiters from the location of the point with fixed colors
-(require 'highlight-parentheses)
-(define-globalized-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  (lambda ()
-    (highlight-parentheses-mode t)))
-(global-highlight-parentheses-mode t)
+;(require 'highlight-parentheses)
+;(define-globalized-minor-mode global-highlight-parentheses-mode
+;  highlight-parentheses-mode
+;  (lambda ()
+;    (highlight-parentheses-mode t)))
+;(global-highlight-parentheses-mode t)
 
 ;; color theme
 (load-theme 'wombat)
@@ -109,6 +109,9 @@
 
 ; Company auto-complete configuration
 (load-file "~/.emacs.d/personal/company-mode.el")
+
+; Customize python shell keybindings
+(load-file "~/.emacs.d/personal/python-mode.el")
 
 ; enable lispy (paredit with vi-like keybindings)
 ; (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
@@ -178,3 +181,5 @@
 ; Use counsel/ivy for projectile completion
 (add-hook 'after-init-hook 'counsel-mode)
 (counsel-projectile-on)
+
+;(require 'ein) ; iPython files

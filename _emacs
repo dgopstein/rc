@@ -47,6 +47,20 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'flyspell-mode)
 
+;; Copy to system clipboard
+;; https://gist.github.com/the-kenny/267162
+(defun paste-from-osx ()
+  (shell-command-to-string "pbpaste"))
+
+(defun copy-to-osx (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+
+;;(setq interprogram-cut-function 'copy-to-osx)
+;;(setq interprogram-paste-function 'paste-from-osx)
+
 ;; highlight matching parens
 (show-paren-mode 1)
 (setq show-paren-delay 0)
@@ -100,6 +114,13 @@
        "Window '%s' is dedicated"
      "Window '%s' is normal")
       (current-buffer)))
+
+;; Grammar checking with langtool
+(require 'langtool)
+(setq langtool-language-tool-jar "~/opt/lib/LanguageTool-4.0/languagetool-commandline.jar")
+(setq langtool-default-language "en-US")
+(global-set-key "\C-x4w" 'langtool-check)
+(global-set-key "\C-x4W" 'langtool-check-done)
 
 ; Enable evil mode (vim emulation) and all customizations
 (load-file "~/.emacs.d/personal/evil.el")

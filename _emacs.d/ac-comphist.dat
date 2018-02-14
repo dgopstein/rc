@@ -1,460 +1,406 @@
-(((":let" .
-   [1 0 0 0])
-  (":when" .
-   [2 0 0 0 0])
-  ("relativize-filename" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("relativ" .
-   [0 0 0 0 1 0 0])
-  ("partial-right" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("#_" .
-   [1 0])
-  (":name" .
-   [3 0 0 0 0])
-  (":file" .
+((("norm" .
+   [0 0 0 1])
+  ("torch" .
    [1 0 0 0 0])
-  ("group-dissoc" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])
-  ("frequencies-by" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1 0])
-  ("author" .
-   [1 0 0 0 0 0])
-  ("atom-touchers" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  (":email" .
-   [3 0 0 0 0 0])
-  (":author" .
-   [4 0 0 0 0 0 0])
-  ("line-authors" .
-   [0 0 0 0 0 0 0 2 0 1 0 0])
-  ("atom-line" .
-   [3 0 0 0 0 0 0 0 0])
-  ("atom-lines" .
-   [3 0 0 0 0 0 0 0 0 0])
-  ("line" .
-   [4 0 0 0])
-  (":atom" .
-   [2 0 0 0 0])
-  ("atm-type" .
-   [1 0 0 0 0 0 0 0])
-  ("nodes" .
-   [2 0 0 0 0])
-  ("lines" .
-   [2 0 0 0 0])
-  ("atm" .
-   [3 0 0])
-  ("atoms" .
-   [5 0 0 0 0])
-  (":all-nodes" .
-   [1 0 0 0 0 0 0 0 0 0])
-  ("find-all-atoms-non-atoms" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("file-blame" .
-   [3 0 0 0 0 0 0 0 0 0])
-  (":line" .
-   [3 0 0 0 0])
-  ("s/Any" .
-   [4 0 0 0 0])
-  ("s/Int" .
-   [3 0 0 0 0])
-  ("intra-project-filename" .
-   [0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("string" .
-   [1 0 0 0 0 0])
-  ("abs-file" .
-   [1 0 0 0 0 0 0 0])
-  ("in" .
-   [5 0])
-  ("prfn" .
-   [1 0 0 0])
-  ("repo-root-dir" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0])
-  ("Git" .
-   [1 0 0])
-  (".getParent" .
-   [1 0 0 0 0 0 0 0 0 0])
-  (".getRepository" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("repo" .
-   [11 0 0 0])
-  ("atom-finder-repos" .
-   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
-  ("gitp/load-repo" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("def" .
-   [4 0 0])
-  ("file" .
+  ("vocab" .
+   [1 0 0 0 0])
+  ("TEXT" .
    [3 0 0 0])
-  ("gcc-repo" .
-   [1 0 0 0 0 0 0 0])
-  ("expand-home" .
-   [0 0 0 0 0 1 0 0 0 0 0])
-  ("pmap-dir-files" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0])
-  ("IASTUnaryExpression" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("IASTBinaryExpression" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
-  (":else" .
-   [1 0 0 0 0])
-  ("node" .
-   [60 0 0 0])
-  (".getOperator" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])
-  (".getOperand" .
-   [5 0 0 0 0 0 0 0 0 0 0])
-  ("IASTIdExpression" .
-   [0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0])
-  ("->>" .
-   [29 0 0])
-  ("operand" .
-   [7 0 0 0 0 0 0])
-  (".getName" .
-   [1 0 0 0 0 0 0 0])
-  ("replacements" .
-   [14 0 0 0 0 0 0 0 0 0 0 0])
-  ("->" .
-   [8 0])
-  (".setOperand1" .
-   [0 0 0 0 0 0 1 0 0 0 0 0])
-  ("op-name" .
-   [3 0 1 0 0 0 0])
-  ("replacement" .
-   [6 0 0 0 0 0 0 0 0 0 1])
-  ("when-let*" .
-   [2 0 0 0 0 0 0 0 0])
-  ("replace-identifier" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1])
-  ("exp" .
-   [10 0 0])
-  ("operator" .
-   [1 0 0 0 0 0 0 0])
-  ("pap" .
-   [49 0 0])
-  ("param-args" .
-   [3 0 0 0 0 0 1 0 0 0])
-  ("write-ast" .
-   [55 0 0 0 0 0 1 0 3])
-  ("p" .
-   [3])
-  ("do" .
-   [2 0])
-  (".copy" .
-   [15 0 0 0 0])
-  ("new-node" .
-   [6 0 0 0 0 0 0 0])
-  ("pprn" .
-   [31 0 0 0])
-  ("macro-body" .
-   [3 0 0 0 0 0 0 0 0 0])
-  ("new" .
-   [2 0 0])
-  ("new-body" .
-   [12 0 0 0 0 0 1 0])
-  ("s/defn" .
-   [8 0 0 0 0 0])
-  (":-" .
-   [9 0])
-  ("IASTNode" .
-   [1 0 0 0 0 0 0 0])
-  ("defmacro" .
-   [0 0 0 0 1 0 0 0])
-  ("params" .
-   [4 0 0 0 0 0])
-  ("toString" .
-   [2 0 0 0 0 0 0 0])
-  ("obj" .
-   [2 0 0])
-  ("str-method" .
-   [1 0 0 0 0 0 0 0 0 0])
-  ("macroexpand-1" .
-   [0 0 0 0 0 0 2 0 1 0 0 1 0])
-  ("call-method" .
-   [5 0 0 0 0 0 0 0 0 0 0])
-  ("method" .
-   [3 0 0 0 0 1])
-  ("set-method" .
-   [1 0 0 0 0 0 0 0 0 0])
-  ("maybe-set-operand" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("macro-exp" .
-   [3 0 0 0 0 0 1 1 0])
-  ("map-values" .
-   [4 0 0 0 0 0 0 0 0 0])
-  ("parse-macro-def" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("-maybe-set-operand!" .
-   [1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
-  ("tap" .
-   [2 0 0])
-  ("macro-replace-arg-trees" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("expansion-args" .
-   [2 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("expansion" .
-   [2 0 0 0 0 0 0 0 0])
-  ("macro-def" .
-   [3 0 0 0 0 0 0 0 0])
-  (":params" .
-   [1 0 0 0 0 0 0])
-  (":args" .
-   [2 0 0 0 0])
-  ("body-str" .
-   [2 0 0 0 0 0 0 0])
-  ("parse-macro" .
-   [3 0 0 0 0 0 0 0 0 0 0])
-  ("m" .
-   [1])
-  ("macro" .
-   [1 0 0 0 0])
-  (":body-tree" .
-   [3 0 0 0 0 0 0 0 0 0])
-  (":params-str" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("mac" .
-   [7 0 0])
-  (":args-tree" .
-   [1 0 0 0 0 0 0 0 0 0])
-  (":body-str" .
-   [2 0 0 0 0 0 0 0 0])
-  ("s/Str" .
-   [5 0 0 0 0])
-  ("replace-map" .
-   [3 0 0 0 0 0 0 0 0 0 0])
-  (":args-str" .
-   [2 0 0 0 0 0 0 0 0])
-  ("parse-frag" .
-   [17 0 0 0 0 0 0 0 0 0])
-  ("macro-replace-arg-str" .
-   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1])
-  ("expansion-args-tree" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
-  ("expansion-args-str" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("pat" .
-   [1 0 0])
-  ("target" .
-   [6 0 0 0 0 0])
-  ("macro-replace-arg-" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("macro-replace-arg-tree" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  (".getMacroDefinition" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1])
-  ("IASTPreprocessorFunctionStyleMacroDefinition" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("atom-finder.tree-diff" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  (":refer" .
-   [1 0 0 0 0 0])
-  (":all" .
-   [1 0 0 0])
-  ("macro-operator-precedence.c" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1])
-  ("any-pred?" .
-   [2 0 0 0 0 0 0 0 0])
-  ("macro-inner-precedence-finder" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("inner-macro-operator-atom?" .
-   [0 0 0 0 0 1 0 0 0 3 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("outer-macro-operator-atom?" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("macro-operator-precedence" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("macro-operator-precedence-finder" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0])
-  ("parse-source" .
-   [3 0 0 0 0 0 0 0 0 0 0 0])
-  ("parse-file" .
-   [3 0 0 0 0 0 0 0 0 0])
-  ("macro-operator-precedence-atom?" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0])
-  ("try" .
-   [1 0 0])
-  ("catch" .
-   [1 0 0 0 0])
-  ("java.util.regex.PatternSyntaxException" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("%2" .
-   [2 0])
-  ("str/re-quote-replacement" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("java.util.regex.Pattern" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("quote" .
-   [1 0 0 0 0])
-  (".getMacroExpansions" .
-   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 3])
-  ("macro-operator-precedence-atom" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("root-ancestor" .
-   [4 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("str/replace" .
-   [2 0 0 0 0 0 0 0 0 0 0])
-  ("pattern" .
-   [1 0 0 0 0 0 0])
-  ("pprint" .
-   [6 0 0 0 0 0])
-  ("start-line" .
-   [5 0 0 0 0 0 0 0 0 0])
-  ("print-tree" .
-   [17 0 0 0 0 0 0 0 0 0])
-  ("parse-expr" .
-   [6 0 0 0 0 0 0 0 0 0])
-  ("get-in-tree" .
-   [5 0 0 0 0 0 0 0 0 0 0])
-  ("-<" .
-   [1 0])
-  ("<>" .
-   [1 0])
-  ("parse-stmt" .
-   [3 0 0 0 0 0 0 0 0 0])
-  ("children" .
-   [4 0 0 0 0 0 0 0])
-  ("=by" .
-   [2 0 0])
-  ("loc" .
-   [1 0 0])
-  ("xs" .
-   [3 0])
-  ("nil" .
-   [7 0 0])
-  ("kids" .
-   [2 0 0 0])
-  ("kid" .
-   [3 0 0])
-  ("least-trivial-child" .
-   [0 0 0 0 0 1 0 2 0 0 0 0 0 0 0 0 0 0 0])
-  ("no" .
-   [3 0])
-  ("recur" .
-   [1 0 0 0 0])
-  ("replaced-str" .
-   [3 0 0 0 0 0 0 0 0 0 0 0])
-  ("replaced-tree" .
-   [3 0 0 0 0 0 0 0 0 0 0 0 0])
-  (".contains" .
+  (".setArgument" .
+   [0 0 0 0 0 0 0 0 0 0 0 1])
+  (".setFilter" .
+   [0 0 0 0 0 0 0 0 0 1])
+  (".setArguments" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("new-child" .
    [1 0 0 0 0 0 0 0 0])
-  ("IASTMacroExpansionLocation" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("IASTPreprocessorMacroExpansion" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("substituting-macro?" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("defmulti" .
-   [0 0 0 1 0 0 0 0])
-  ("defmethod" .
-   [0 0 0 0 0 0 0 0 1])
-  ("macro-body-str" .
-   [4 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("IASTPreprocessorMacroDefinition" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("map-keys" .
-   [1 0 0 0 0 0 1 0])
-  ("true" .
-   [2 0 0 0])
-  ("op1" .
-   [1 0 0])
-  ("op2" .
-   [1 0 0])
-  ("n" .
+  ("%" .
    [1])
-  ("code" .
-   [2 0 0 0])
-  ("%1" .
-   [7 0])
-  ("parser" .
-   [2 0 0 0 0 0])
-  ("valid-parse?" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])
-  ("stmt-str?" .
-   [1 0 0 0 0 0 0 0 0])
-  ("filter-tree" .
-   [2 0 0 0 0 0 0 0 0 0 0])
-  ("exists?" .
-   [1 0 0 0 0 0 0])
-  ("IASTName" .
-   [1 0 0 0 0 0 0 0])
-  ("IASTCastExpression" .
-   [1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("if" .
-   [1 0])
-  ("paren-node?" .
+  (".getArgument" .
+   [0 0 0 0 0 0 0 0 0 0 0 1])
+  ("args" .
+   [7 0 0 0])
+  ("arg" .
+   [1 0 0])
+  ("idx" .
+   [2 0 0])
+  ("map-indexed" .
    [0 0 0 0 0 0 1 0 0 0 0])
-  (".setOperator" .
-   [0 0 0 0 0 0 0 0 1 0 0 0])
-  ("child" .
-   [6 0 0 0 0])
-  ("x1" .
-   [2 0])
-  ("remove-cast-parens" .
-   [1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("safe-write-ast" .
-   [4 0 0 0 1 0 0 0 0 0 0 0 0 1])
-  ("x2" .
-   [1 0])
-  ("paren-wrapped-exp?" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("CPPASTUnaryExpression." .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1])
-  ("org.eclipse.cdt.internal.core.dom.parser.cpp" .
-   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("paren-wrap" .
-   [3 0 0 0 0 0 0 0 0 0])
-  ("w" .
-   [2])
-  ("parent" .
+  ("IASTFunctionCallExpression" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  (".getArguments" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("setter" .
    [1 0 0 0 0 0])
-  ("IASTExpression" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("b" .
-   [1])
-  ("body-getter" .
-   [3 0 0 0 0 0 0 0 0 0 0])
-  ("body-handle" .
-   [3 0 0 0 0 0 0 0 0 0 0])
-  (":exp" .
-   [3 0 0 0])
-  ("node-str" .
-   [2 0 0 0 0 0 0 0])
-  ("str-str" .
-   [2 0 0 0 0 0 0])
-  ("tree-str" .
+  ("getter" .
+   [2 0 0 0 0 0])
+  ("-maybe-set-value!" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1])
+  (".getFileLocation" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("filename" .
    [2 0 0 0 0 0 0 0])
   ("expr-operator" .
    [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("filename" .
-   [15 0 0 0 0 0 1 0])
-  (".getFileLocation" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("-maybe-set-value!" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1])
-  ("getter" .
-   [2 0 0 0 0 0])
-  ("setter" .
+  ("tree-str" .
+   [2 0 0 0 0 0 0 0])
+  ("str-str" .
+   [2 0 0 0 0 0 0])
+  ("node-str" .
+   [2 0 0 0 0 0 0 0])
+  (":exp" .
+   [3 0 0 0])
+  ("body-handle" .
+   [3 0 0 0 0 0 0 0 0 0 0])
+  ("body-getter" .
+   [3 0 0 0 0 0 0 0 0 0 0])
+  ("b" .
+   [1])
+  ("IASTExpression" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("parent" .
    [1 0 0 0 0 0])
-  (".getArguments" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("IASTFunctionCallExpression" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("map-indexed" .
+  ("w" .
+   [3])
+  ("paren-wrap" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("org.eclipse.cdt.internal.core.dom.parser.cpp" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("CPPASTUnaryExpression." .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1])
+  ("paren-wrapped-exp?" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("x2" .
+   [1 0])
+  ("safe-write-ast" .
+   [4 0 0 0 1 0 0 0 0 0 0 0 0 1])
+  ("remove-cast-parens" .
+   [1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("x1" .
+   [2 0])
+  ("child" .
+   [6 0 0 0 0])
+  (".setOperator" .
+   [0 0 0 0 0 0 0 0 1 0 0 0])
+  ("paren-node?" .
    [0 0 0 0 0 0 1 0 0 0 0])
-  ("idx" .
-   [2 0 0])
-  ("arg" .
-   [1 0 0])
-  ("args" .
-   [7 0 0 0])
-  (".getArgument" .
-   [0 0 0 0 0 0 0 0 0 0 0 1])
-  ("%" .
-   [2])
-  ("new-child" .
+  ("if" .
+   [1 0])
+  ("IASTCastExpression" .
+   [1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("IASTName" .
+   [1 0 0 0 0 0 0 0])
+  ("exists?" .
+   [1 0 0 0 0 0 0])
+  ("filter-tree" .
+   [2 0 0 0 0 0 0 0 0 0 0])
+  ("stmt-str?" .
    [1 0 0 0 0 0 0 0 0])
-  (".setArguments" .
+  ("valid-parse?" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("parser" .
+   [2 0 0 0 0 0])
+  ("%1" .
+   [5 0])
+  ("code" .
+   [2 0 0 0])
+  ("n" .
+   [1])
+  ("op2" .
+   [1 0 0])
+  ("op1" .
+   [1 0 0])
+  ("true" .
+   [2 0 0 0])
+  ("map-keys" .
+   [1 0 0 0 0 0 0 0])
+  ("IASTPreprocessorMacroDefinition" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("macro-body-str" .
+   [4 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("defmethod" .
+   [0 0 0 0 0 0 0 0 1])
+  ("defmulti" .
+   [0 0 0 1 0 0 0 0])
+  ("substituting-macro?" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("IASTPreprocessorMacroExpansion" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("IASTMacroExpansionLocation" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  (".contains" .
+   [1 0 0 0 0 0 0 0 0])
+  ("replaced-tree" .
+   [3 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("replaced-str" .
+   [3 0 0 0 0 0 0 0 0 0 0 0])
+  ("recur" .
+   [1 0 0 0 0])
+  ("no" .
+   [3 0])
+  ("least-trivial-child" .
+   [0 0 0 0 0 1 0 2 0 0 0 0 0 0 0 0 0 0 0])
+  ("kid" .
+   [3 0 0])
+  ("kids" .
+   [2 0 0 0])
+  ("nil" .
+   [13 0 0])
+  ("xs" .
+   [3 0])
+  ("loc" .
+   [1 0 0])
+  ("=by" .
+   [2 0 0])
+  ("children" .
+   [4 0 0 0 0 0 0 0])
+  ("parse-stmt" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("<>" .
+   [1 0])
+  ("-<" .
+   [1 0])
+  ("get-in-tree" .
+   [5 0 0 0 0 0 0 0 0 0 0])
+  ("parse-expr" .
+   [6 0 0 0 0 0 0 0 0 0])
+  ("print-tree" .
+   [17 0 0 0 0 0 0 0 0 0])
+  ("start-line" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("pprint" .
+   [4 0 0 0 0 0])
+  ("pattern" .
+   [1 0 0 0 0 0 0])
+  ("str/replace" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("root-ancestor" .
+   [4 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("macro-operator-precedence-atom" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  (".getMacroExpansions" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 3])
+  ("quote" .
+   [1 0 0 0 0])
+  ("java.util.regex.Pattern" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("str/re-quote-replacement" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("%2" .
+   [5 0])
+  ("java.util.regex.PatternSyntaxException" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("catch" .
+   [1 0 0 0 0])
+  ("try" .
+   [1 0 0])
+  ("macro-operator-precedence-atom?" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0])
+  ("parse-file" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("parse-source" .
+   [3 0 0 0 0 0 0 0 0 0 0 0])
+  ("macro-operator-precedence-finder" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0])
+  ("macro-operator-precedence" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("outer-macro-operator-atom?" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("inner-macro-operator-atom?" .
+   [0 0 0 0 0 1 0 0 0 3 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("macro-inner-precedence-finder" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("any-pred?" .
+   [2 0 0 0 0 0 0 0 0])
+  ("macro-operator-precedence.c" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1])
+  (":all" .
+   [1 0 0 0])
+  (":refer" .
+   [1 0 0 0 0 0])
+  ("atom-finder.tree-diff" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("IASTPreprocessorFunctionStyleMacroDefinition" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  (".getMacroDefinition" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1])
+  ("macro-replace-arg-tree" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("macro-replace-arg-" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("target" .
+   [6 0 0 0 0 0])
+  ("pat" .
+   [1 0 0])
+  ("expansion-args-str" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("expansion-args-tree" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("macro-replace-arg-str" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1])
+  ("parse-frag" .
+   [17 0 0 0 0 0 0 0 0 0])
+  (":args-str" .
+   [2 0 0 0 0 0 0 0 0])
+  ("replace-map" .
+   [3 0 0 0 0 0 0 0 0 0 0])
+  ("s/Str" .
+   [4 0 0 0 0])
+  (":body-str" .
+   [2 0 0 0 0 0 0 0 0])
+  (":args-tree" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("mac" .
+   [7 0 0])
+  (":params-str" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  (":body-tree" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("macro" .
+   [1 0 0 0 0])
+  ("m" .
+   [1])
+  ("parse-macro" .
+   [3 0 0 0 0 0 0 0 0 0 0])
+  ("body-str" .
+   [2 0 0 0 0 0 0 0])
+  (":args" .
+   [2 0 0 0 0])
+  (":params" .
+   [1 0 0 0 0 0 0])
+  ("macro-def" .
+   [3 0 0 0 0 0 0 0 0])
+  ("expansion" .
+   [2 0 0 0 0 0 0 0 0])
+  ("expansion-args" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("macro-replace-arg-trees" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("tap" .
+   [2 0 0])
+  ("-maybe-set-operand!" .
+   [1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("parse-macro-def" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("map-values" .
+   [2 0 0 0 0 0 0 0 0 0])
+  ("macro-exp" .
+   [3 0 0 0 0 0 1 1 0])
+  ("maybe-set-operand" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("set-method" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("method" .
+   [3 0 0 0 0 1])
+  ("call-method" .
+   [5 0 0 0 0 0 0 0 0 0 0])
+  ("macroexpand-1" .
+   [0 0 0 0 0 0 2 0 1 0 0 1 0])
+  ("str-method" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("obj" .
+   [2 0 0])
+  ("toString" .
+   [2 0 0 0 0 0 0 0])
+  ("params" .
+   [4 0 0 0 0 0])
+  ("defmacro" .
+   [0 0 0 0 1 0 0 0])
+  ("IASTNode" .
+   [1 0 0 0 0 0 0 0])
+  (":-" .
+   [5 0])
+  ("s/defn" .
+   [7 0 0 0 0 0])
+  ("new-body" .
+   [12 0 0 0 0 0 1 0])
+  ("new" .
+   [2 0 0])
+  ("macro-body" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("pprn" .
+   [29 0 0 0])
+  ("new-node" .
+   [6 0 0 0 0 0 0 0])
+  (".copy" .
+   [15 0 0 0 0])
+  ("do" .
+   [3 0])
+  ("p" .
+   [4])
+  ("write-ast" .
+   [55 0 0 0 0 0 1 0 3])
+  ("param-args" .
+   [3 0 0 0 0 0 1 0 0 0])
+  ("pap" .
+   [48 0 0])
+  ("operator" .
+   [1 0 0 0 0 0 0 0])
+  ("exp" .
+   [10 0 0])
+  ("replace-identifier" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1])
+  ("when-let*" .
+   [2 0 0 0 0 0 0 0 0])
+  ("replacement" .
+   [6 0 0 0 0 0 0 0 0 0 1])
+  ("op-name" .
+   [3 0 1 0 0 0 0])
+  (".setOperand1" .
+   [0 0 0 0 0 0 1 0 0 0 0 0])
+  ("->" .
+   [7 0])
+  ("replacements" .
+   [14 0 0 0 0 0 0 0 0 0 0 0])
+  (".getName" .
+   [1 0 0 0 0 0 0 0])
+  ("operand" .
+   [7 0 0 0 0 0 0])
+  ("->>" .
+   [20 0 0])
+  ("IASTIdExpression" .
+   [0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0])
+  (".getOperand" .
+   [5 0 0 0 0 0 0 0 0 0 0])
+  (".getOperator" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("node" .
+   [58 0 0 0])
+  (":else" .
+   [1 0 0 0 0])
+  ("IASTBinaryExpression" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("IASTUnaryExpression" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("is" .
+   [1 0])
+  ("lines" .
+   [1 0 0 0 0])
+  ("re-find" .
+   [0 0 0 0 1 0 0])
+  ("third" .
+   [1 0 0 0 0])
+  ("read-lines" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("src" .
+   [2 0 0])
+  ("in" .
+   [2 0])
+  ("c" .
+   [1])
+  ("time-mins" .
+   [1 0 0 0 0 0 0 0 0])
+  ("available-processors" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("commit" .
+   [6 0 0 0 0 0])
+  (":srcs" .
+   [1 0 0 0 0])
+  ("rev-commit" .
+   [0 0 0 0 0 0 0 1 0 0])
+  (":when" .
+   [1 0 0 0 0])
+  (":atoms-before" .
    [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  (".setFilter" .
-   [0 0 0 0 0 0 0 0 0 1])
-  (".setArgument" .
-   [0 0 0 0 0 0 0 0 0 0 0 1])))
+  (":atoms-after" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])))

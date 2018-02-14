@@ -1,3 +1,5 @@
+(setq py-jump-on-exception nil)
+
 ;; Slightly adapted from:
 ;; https://github.com/wavexx/python-x.el/blob/master/python-x.el
 (defun python-shell-send-region-or-line ()

@@ -46,9 +46,8 @@ init_keybindings() {
 init_packages() {
   export ZSH=$HOME/.oh-my-zsh
   export ZSH_THEME_GIT_PROMPT_NOCACHE=t
-  plugins=(git gnu-utils)
+  plugins=(git git-prompt gnu-utils)
   source $ZSH/oh-my-zsh.sh
-  source ~/.zsh/git-prompt/zsh-git-prompt.sh # https://github.com/olivierverdier/zsh-git-prompt
   unsetopt correctall
 
 
@@ -102,7 +101,7 @@ init_prompt() {
   export ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
   #PROMPT="%{`echo "\a"`%}[%D{%H:%M:%S}] %n@%m:%~%# "
   #PROMPT="%{`echo "\a"`%}" # bell at prompt to light up xmobar on command completion
-  PROMPT='$(git_super_status) ${prompt_host}%B%~%b %# ' # git status
+  PROMPT='$(git_super_status) ${prompt_host}%B%~%b %# '
 }
 
 preexec() {

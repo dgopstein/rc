@@ -204,3 +204,23 @@
 (counsel-projectile-on)
 
 ;(require 'ein) ; iPython files
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-echo ((t nil)) t)
+ '(company-scrollbar-bg ((t (:background "#686868" :inherit company-tooltip))))
+ '(company-scrollbar-fg ((t (:background "#808080"))))
+ '(company-tooltip ((t (:background "#505050" :foreground "#95e454"))))
+ '(company-tooltip-annotation ((t (:foreground "#73B041"))))
+ '(company-tooltip-common ((t (:inherit nil :background "black"))))
+ '(company-tooltip-selection ((t (:background "#686868")))))

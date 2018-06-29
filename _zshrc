@@ -71,6 +71,7 @@ init_path() {
     /usr/games 
     /mono64/bin
     ~/Library/Python/2.7/bin/
+    ~/miniconda3/bin
 ################
     $PATH 
 ################

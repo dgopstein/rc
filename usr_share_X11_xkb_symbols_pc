@@ -20,12 +20,12 @@ xkb_symbols "pc105" {
     key <RTRN> {	[ Return		]	};
 
     //key <CAPS> {	[ Caps_Lock		]	};
-    key <CAPS> {	[ Control_L		]	};
+    key <CAPS> {	[ Super_L		]	};
     key <NMLK> {	[ Num_Lock 		]	};
 
     key <LFSH> {	[ Shift_L		]	};
-    key <LCTL> {	[ Super_L		]	};
-    key <LWIN> {	[ Caps_Lock		]	};
+    key <LCTL> {	[ Caps_Lock		]	};
+    key <LWIN> {	[ Control_L		]	};
     //key <LCTL> {	[ Control_L		]	};
     //key <LWIN> {	[ Super_L		]	};
 

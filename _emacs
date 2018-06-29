@@ -116,11 +116,11 @@
       (current-buffer)))
 
 ;; Grammar checking with langtool
-(require 'langtool)
-(setq langtool-language-tool-jar "~/opt/lib/LanguageTool-4.0/languagetool-commandline.jar")
-(setq langtool-default-language "en-US")
-(global-set-key "\C-x4w" 'langtool-check)
-(global-set-key "\C-x4W" 'langtool-check-done)
+;(require 'langtool)
+;(setq langtool-language-tool-jar "~/opt/lib/LanguageTool-4.0/languagetool-commandline.jar")
+;(setq langtool-default-language "en-US")
+;(global-set-key "\C-x4w" 'langtool-check)
+;(global-set-key "\C-x4W" 'langtool-check-done)
 
 ; Enable evil mode (vim emulation) and all customizations
 (load-file "~/.emacs.d/personal/evil.el")

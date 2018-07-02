@@ -15,25 +15,28 @@
                 },
                 "rules": [
                     {
-                        "description": "Change Japanese 3-like thing (next to right-shift) to ~",
+                        "description": "Change Japanese 3-like thing (next to right-shift) to `/~",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "international1"
+                                },
+                                "to": [
+                                    {"key_code": "grave_accent_and_tilde"}
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "international1",
                                     "modifiers": {
-                                        "optional": [
+                                        "mandatory": [
                                             "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
+                                        ]}},
+                              "to": [{
+                                "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["left_shift"]
+                                    }],
                                 "type": "basic"
                             }
                         ]

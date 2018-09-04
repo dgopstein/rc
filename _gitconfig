@@ -7,6 +7,7 @@
 	undo-commit = reset --soft HEAD^
 	unadd = reset HEAD
 	ignore-change = update-index --assume-unchanged
+	unignore-change = update-index --no-assume-unchanged
 [merge]
 	tool = diffmerge
 [push]

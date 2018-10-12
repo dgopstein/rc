@@ -211,7 +211,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))))
+    (## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

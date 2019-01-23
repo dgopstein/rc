@@ -58,6 +58,7 @@ init_path() {
   pathdirs=(
     $HOME/bin 
     $HOME/opt/bin 
+    $(pyenv root)/shims
     ~/opt/lib/miniconda3/bin
 #    /usr/local/opt/coreutils//libexec/gnubin/
     /usr/lib/lightdm/lightdm 

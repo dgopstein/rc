@@ -47,6 +47,7 @@ init_packages() {
   export ZSH=$HOME/.oh-my-zsh
   export ZSH_THEME_GIT_PROMPT_NOCACHE=t
   plugins=(git git-prompt gnu-utils)
+  ZSH_DISABLE_COMPFIX=true # https://github.com/ohmyzsh/ohmyzsh/issues/8205
   source $ZSH/oh-my-zsh.sh
   unsetopt correctall
 

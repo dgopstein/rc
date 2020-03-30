@@ -6,6 +6,7 @@
   co = checkout
 	undo-commit = reset --soft HEAD^
 	unadd = reset HEAD
+	untrack = rm --cached
 	ignore-change = update-index --assume-unchanged
 	unignore-change = update-index --no-assume-unchanged
 [merge]

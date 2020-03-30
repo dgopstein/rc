@@ -28,6 +28,7 @@ init_aliases() {
   alias jack='ack --ignore-dir=_site --ignore-dir=_sass/vendor --ignore-dir=.sass-cache' # ack for jekyll projects
   alias jag='ag --ignore-dir=_site --ignore-dir=_sass/vendor --ignore-dir=.sass-cache' # ag for jekyll projects
   alias tmux='tmux -2'
+  alias skim='open -a Skim'
 
   #unalias sl
 }

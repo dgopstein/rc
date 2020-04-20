@@ -47,17 +47,21 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'flyspell-mode)
 
+
+;; Copy-paste to/from OSX/system clipboard
+(xclip-mode)
+
 ;; Copy to system clipboard
 ;; https://gist.github.com/the-kenny/267162
-(defun paste-from-osx ()
-  (shell-command-to-string "pbpaste"))
-
-(defun copy-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
-
+;; (defun paste-from-osx ()
+;;   (shell-command-to-string "pbpaste"))
+;;
+;; (defun copy-to-osx (text &optional push)
+;;   (let ((process-connection-type nil))
+;;     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+;;       (process-send-string proc text)
+;;       (process-send-eof proc))))
+;;
 ;;(setq interprogram-cut-function 'copy-to-osx)
 ;;(setq interprogram-paste-function 'paste-from-osx)
 
@@ -211,7 +215,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (nodejs-repl pyenv-mode ## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider)))
+    (xclip nodejs-repl pyenv-mode ## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider)))
  '(python-shell-interpreter "/Users/dgopstein/.pyenv/shims/python"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -234,3 +238,27 @@
             (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
             (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
             (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
+
+;; https://emacs.stackexchange.com/questions/24459/revert-all-open-buffers-and-ignore-errors
+(defun revert-all-file-buffers ()
+  "Refresh all open file buffers without confirmation.
+Buffers in modified (not yet saved) state in emacs will not be reverted. They
+will be reverted though if they were modified outside emacs.
+Buffers visiting files which do not exist any more or are no longer readable
+will be killed."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (let ((filename (buffer-file-name buf)))
+      ;; Revert only buffers containing files, which are not modified;
+      ;; do not try to revert non-file buffers like *Messages*.
+      (when (and filename
+                 (not (buffer-modified-p buf)))
+        (if (file-readable-p filename)
+            ;; If the file exists and is readable, revert the buffer.
+            (with-current-buffer buf
+              (revert-buffer :ignore-auto :noconfirm :preserve-modes))
+          ;; Otherwise, kill the buffer.
+          (let (kill-buffer-query-functions) ; No query done when killing buffer
+            (kill-buffer buf)
+            (message "Killed non-existing/unreadable file buffer: %s" filename))))))
+  (message "Finished reverting buffers containing unmodified files."))

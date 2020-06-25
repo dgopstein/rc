@@ -49,7 +49,7 @@
 
 
 ;; Copy-paste to/from OSX/system clipboard
-(xclip-mode)
+; (xclip-mode)
 
 ;; Copy to system clipboard
 ;; https://gist.github.com/the-kenny/267162

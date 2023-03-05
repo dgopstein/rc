@@ -207,6 +207,10 @@
 (add-hook 'after-init-hook 'counsel-mode)
 (counsel-projectile-on)
 
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
+
 ;(require 'ein) ; iPython files
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -214,7 +218,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(xclip nodejs-repl pyenv-mode ## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))
+   '(projectile-codesearch xclip nodejs-repl pyenv-mode ## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))
  '(python-shell-interpreter "/Users/dgopstein/.pyenv/shims/python"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

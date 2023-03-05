@@ -1,7 +1,7 @@
 ;; prevent silly initial splash screen
 (setq inhibit-splash-screen t)
 
-;; no tabs
+; no tabs
 (setq c-basic-offset 2)
 (setq css-indent-offset 2)
 (setq-default indent-tabs-mode nil)
@@ -194,7 +194,7 @@
 (global-set-key (kbd "C-c C-j") 'ruby-send-line)
 
 ; enable projectile (for easy file finding)
-(projectile-global-mode)
+;(projectile-global-mode)
 
 ; better defaults for moving files
 ; https://emacs.stackexchange.com/questions/5603/how-to-quickly-copy-move-file-in-emacs-dired
@@ -214,8 +214,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (xclip nodejs-repl pyenv-mode ## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider)))
+   '(xclip nodejs-repl pyenv-mode ## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))
  '(python-shell-interpreter "/Users/dgopstein/.pyenv/shims/python"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

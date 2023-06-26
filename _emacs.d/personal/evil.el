@@ -6,6 +6,9 @@
 ;; https://github.com/syl20bnr/spacemacs/issues/646
 (setq evil-move-cursor-back nil)
 
+;; https://emacs.stackexchange.com/questions/22600/m-f-doesnt-move-to-next-line-in-evil-mode#:~:text=To%20fix%20this%2C%20set%20evil,final%20position%20on%20the%20line.
+(setq evil-move-beyond-eol t)
+
 ;; Change cursor on evil mode change - https://github.com/7696122/evil-terminal-cursor-changer
 (unless (display-graphic-p)
   (require 'evil-terminal-cursor-changer)

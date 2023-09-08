@@ -38,7 +38,9 @@
 (add-to-list 'exec-path "~/opt/bin")
 
 ;; Show line numbers
-(global-linum-mode t)
+;(global-linum-mode t)
+(when (version<= "26.0.50" emacs-version )
+  (global-display-line-numbers-mode))
 (setq column-number-mode t)
 (setq linum-format "%4d  ")
 

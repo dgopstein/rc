@@ -28,10 +28,7 @@
 ; Install MELPA package manager
 (when (>= emacs-major-version 24)
  (require 'package)
- (add-to-list
-  'package-archives
-  '("melpa" . "http://melpa.org/packages/")
-  t)
+ (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
  (package-initialize))
 
 ;; Add personal binaries to path
@@ -196,7 +193,7 @@
 (global-set-key (kbd "C-c C-j") 'ruby-send-line)
 
 ; enable projectile (for easy file finding)
-;(projectile-global-mode)
+(projectile-global-mode)
 
 ; better defaults for moving files
 ; https://emacs.stackexchange.com/questions/5603/how-to-quickly-copy-move-file-in-emacs-dired
@@ -207,7 +204,7 @@
 
 ; Use counsel/ivy for projectile completion
 (add-hook 'after-init-hook 'counsel-mode)
-;(counsel-projectile-on)
+(counsel-projectile-mode)
 
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -220,7 +217,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(projectile-codesearch xclip nodejs-repl pyenv-mode ## flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))
+   '(yaml yaml-pro projectile-codesearch xclip nodejs-repl pyenv-mode ## flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))
  '(python-shell-interpreter "/Users/dgopstein/.pyenv/shims/python"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -228,11 +225,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-echo ((t nil)) t)
- '(company-scrollbar-bg ((t (:background "#686868" :inherit company-tooltip))))
- '(company-scrollbar-fg ((t (:background "#808080"))))
  '(company-tooltip ((t (:background "#505050" :foreground "#95e454"))))
  '(company-tooltip-annotation ((t (:foreground "#73B041"))))
  '(company-tooltip-common ((t (:inherit nil :background "black"))))
+ '(company-tooltip-scrollbar-thumb ((t (:background "#808080"))))
+ '(company-tooltip-scrollbar-track ((t (:background "#686868" :inherit company-tooltip))))
  '(company-tooltip-selection ((t (:background "#686868")))))
 
 

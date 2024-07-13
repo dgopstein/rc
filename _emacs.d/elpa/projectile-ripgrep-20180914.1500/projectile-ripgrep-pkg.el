@@ -1,0 +1,2 @@
+;;; Generated package description from projectile-ripgrep.el  -*- no-byte-compile: t -*-
+(define-package "projectile-ripgrep" "20180914.1500" "Run ripgrep with Projectile" '((ripgrep "0.3.0") (projectile "0.14.0")) :commit "872e250e8f93b8bb0a8a1de8bde17fd9bd116e31" :authors '(("Nicolas Lamirault" . "nicolas.lamirault@gmail.com")) :maintainer '("Nicolas Lamirault" . "nicolas.lamirault@gmail.com") :keywords '("ripgrep" "projectile") :url "https://github.com/nlamirault/ripgrep.el")

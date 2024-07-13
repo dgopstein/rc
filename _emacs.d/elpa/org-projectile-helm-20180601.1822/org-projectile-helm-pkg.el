@@ -1,0 +1,2 @@
+;;; Generated package description from org-projectile-helm.el  -*- no-byte-compile: t -*-
+(define-package "org-projectile-helm" "20180601.1822" "helm functions for org-projectile" '((org-projectile "1.0.0") (helm "2.3.1") (emacs "25")) :commit "642b39c698db00bc535c1c2335f425fb9f4855a9" :authors '(("Ivan Malison" . "IvanMalison@gmail.com")) :maintainer '("Ivan Malison" . "IvanMalison@gmail.com") :keywords '("org" "projectile" "todo" "helm" "outlines") :url "https://github.com/IvanMalison/org-projectile")

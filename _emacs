@@ -38,7 +38,8 @@
 (add-to-list 'exec-path "~/opt/bin")
 
 ;; Show line numbers
-(global-linum-mode t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+;(global-linum-mode t)
 (setq column-number-mode t)
 (setq linum-format "%4d  ")
 
@@ -194,7 +195,8 @@
 (global-set-key (kbd "C-c C-j") 'ruby-send-line)
 
 ; enable projectile (for easy file finding)
-(projectile-global-mode)
+;(projectile-global-mode)
+;(projectile-mode)
 
 ; better defaults for moving files
 ; https://emacs.stackexchange.com/questions/5603/how-to-quickly-copy-move-file-in-emacs-dired
@@ -204,8 +206,8 @@
 (menu-bar-mode -1)
 
 ; Use counsel/ivy for projectile completion
-(add-hook 'after-init-hook 'counsel-mode)
-(counsel-projectile-on)
+;(add-hook 'after-init-hook 'counsel-mode)
+;(counsel-projectile-on)
 
 ;(require 'ein) ; iPython files
 (custom-set-variables
@@ -214,8 +216,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (xclip nodejs-repl pyenv-mode ## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode counsel-projectile coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider)))
+   '(projectile xclip nodejs-repl pyenv-mode ## flyspell-correct-ivy flyspell-correct cider yaml-mode string-inflection smex scala-mode python-x pug-mode php-mode mmm-mode markdown-preview-mode langtool key-chord jedi-direx inf-ruby highlight-parentheses flycheck evil-terminal-cursor-changer evil-lispy evil-leader evil-commentary evil-cleverparens ess elpy csv-mode coffee-mode brainfuck-mode auctex-lua auctex-latexmk ag ac-cider))
  '(python-shell-interpreter "/Users/dgopstein/.pyenv/shims/python"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

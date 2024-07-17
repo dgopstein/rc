@@ -90,3 +90,5 @@
 ;; (require 'evil-lispy)
 ;; (add-hook 'emacs-lisp-mode-hook #'evil-lispy-mode)
 ;; (add-hook 'clojure-mode-hook #'evil-lispy-mode)
+
+(evil-set-undo-system 'undo-redo)

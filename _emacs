@@ -1,3 +1,6 @@
+;; stop showing so many warnings on boot
+(setq warning-minimum-level :error)
+
 ;; prevent silly initial splash screen
 (setq inhibit-splash-screen t)
 
